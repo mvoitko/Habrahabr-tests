@@ -15,5 +15,5 @@ pip install -r requirements.txt
 
 ```shell
 behave # run all feature files
-> behave features/ # run all feature files in the given folder
-> behave features/search.feature # run the search.feature file only
+behave features/ # run all feature files in the given folder
+behave features/search.feature # run the search.feature file only
