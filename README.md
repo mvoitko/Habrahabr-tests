@@ -6,7 +6,7 @@ This framework tests the basic functionality of Habrahabr web-app.
 ## Setup
 
 ```shell
-git clone git@github.com:StephenDavidson/python-bdd-behave.git
+git clone git@github.com:mvoitko/Habrahabr-tests.git
 cd python-bdd-behave
 pip install -r requirements.txt
 ```
