@@ -3,11 +3,14 @@ BDD Test scenarios for Habrahabr with Python 3.5.
 
 This framework tests the basic functionality of Habrahabr web-app.
 
-Requirements:
+Setup
 
-Python 3.5 or later
+>> git clone git@github.com:StephenDavidson/python-bdd-behave.git
+>> cd python-bdd-behave
+>> pip install -r requirements.txt
 
+Running tests
 
-To run all tests use command:
-
->> python -m pytest -s
+>> behave # run all feature files
+>> behave features/ # run all feature files in the given folder
+>> behave features/search.feature # run the search.feature file only
