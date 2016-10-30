@@ -9,8 +9,12 @@ from src.config import *
 
 
 def read_file(path=path_to_users, delimeter=','):
-    with open(path, 'rt') as f:
-         return csv.reader(f, delimiter=delimeter)
+    rows = []
+    with open(path, 'r') as f:
+        for row in csv.reader(f, delimiter=delimeter):
+            rows.append(row)
+    return rows
+
 
 def whether_in_file(email, path=path_to_users):
     """
@@ -40,6 +44,5 @@ def get_user_credentials(email):
     Generators
     :type dict: {email:password}
     """
-    for row in reader:
-        user_dictionary[row[0]] = row[1]
+    for row in read_file():
         yield {row[0], row[1]}

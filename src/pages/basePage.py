@@ -11,6 +11,8 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.keys import Keys
 from selenium.common.exceptions import *
 
+from src import config
+
 
 class BasePage:
     """
@@ -18,11 +20,11 @@ class BasePage:
     Contains all actions related to UI interaction.
     All pages may be inherited from this class.
     """
-    def __init__(self, driver):
+    def __init__(self, driverm, base_url='http://www.habrahabr.ru/'):
         """
         :type driver: selenium.webdriver.*
         """
-        self.base_url = 'http://www.habrahabr.ru/'
+        self.base_url = base_url
         self.driver = driver
         self.timeout = 15
         # self.logger = logging.getLogger(self.__class__.__name__)
