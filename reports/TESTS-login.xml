@@ -1,0 +1,31 @@
+<testsuite errors="1" failures="0" name="login.Login" skipped="0" tests="1" time="0.000808"><testcase classname="login.Login" name="Login with correct credentials -- @1.1 " status="failed" time="0.000808"><error message="__init__() got an unexpected keyword argument 'url'" type="TypeError">
+<![CDATA[
+Failing step: When I log in ... failed in 0.001s
+Location: src/features/login.feature:12
+Traceback (most recent call last):
+  File "/home/mvoitko/.virtualenvs/Habrahabr-tests/lib/python3.5/site-packages/behave/model.py", line 1456, in run
+    match.run(runner.context)
+  File "/home/mvoitko/.virtualenvs/Habrahabr-tests/lib/python3.5/site-packages/behave/model.py", line 1903, in run
+    self.func(context, *args, **kwargs)
+  File "src/features/steps/user_steps.py", line 27, in step_impl
+    page = LoginPage(context)
+  File "/home/mvoitko/Documents/projects/Habrahabr_tests/src/pages/loginPage.py", line 20, in __init__
+    url='login')
+TypeError: __init__() got an unexpected keyword argument 'url'
+
+Captured logging:
+INFO:test:BEFORE STEP
+INFO:test:AFTER STEP
+INFO:test:BEFORE STEP]]>
+</error><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario Outline: Login with correct credentials -- @1.1 
+    Given I have an account for "habrtest@mailinator.com" ... passed in 0.000s
+    When I log in ... failed in 0.001s
+    Then I should see personalized page ... undefined in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase></testsuite>
