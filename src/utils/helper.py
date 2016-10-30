@@ -1,5 +1,5 @@
 """
-Created on Oct 28, 2016
+Created on Oct 30, 2016
 
 @author: mvoitko
 """
@@ -9,6 +9,10 @@ from src.config import *
 
 
 def read_file(path=path_to_users, delimeter=','):
+    """
+    Check if email is in CSV file.
+    :type list: [row0, row1, ...]
+    """
     rows = []
     with open(path, 'r') as f:
         for row in csv.reader(f, delimiter=delimeter):
@@ -29,7 +33,7 @@ def whether_in_file(email, rows=file_content):
             break
     return is_in_file
 
-def form_user_dict():
+def form_user_dict(rows=file_content):
     """
     Parse credentials from CSV file to dictionary.
     :type dict: {email:password}
