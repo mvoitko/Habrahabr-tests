@@ -55,7 +55,6 @@ class BasePage:
         locator = self.driver._find_elem_by_key(key)
         return WebDriverWait(self.driver, self.timeout).until(EC.presence_of_element_located(*locator))
 
-
     def click_on(self, key):
         """
         Click on element with specified locator.
