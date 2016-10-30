@@ -8,43 +8,38 @@ import csv
 from src.config import *
 
 
-def whether_in_file(email, path=path_to_users, delimiter=','):
+def read_file(path=path_to_users, delimeter=','):
+    with open(path, 'rt') as f:
+         return csv.reader(f, delimiter=delimeter)
+
+def whether_in_file(email, path=path_to_users):
     """
     Check if email is in CSV file.
     :type boolen:
     """
     is_in_file = False
-    with open(path, 'rt') as f:
-         reader = csv.reader(f, delimiter=delimeter)
-         for row in reader:
-              if email == row[0]:
-                  is_in_file = True
-                  break
+    for row in read_file():
+        if email == row[0]:
+            is_in_file = True
+            break
     return is_in_file
 
-def form_user_dict(path=path_to_users, delimiter=','):
+def form_user_dict():
     """
     Parse credentials from CSV file to dictionary.
     :type dict: {email:password}
     """
     user_dictionary = {}
-    with open(path, 'rt') as f:
-        reader = csv.reader(f, delimiter=delimeter)
-        for row in reader:
-            user_dictionary[row[0]] = row[1]
+    for row in read_file():
+        user_dictionary[row[0]] = row[1]
     return user_dictionary
 
-
-
-def get_user_password(email, path=path_to_users):
+def get_user_credentials(email):
     """
     Parse credentials from CSV file to dictionary.
     Generators
     :type dict: {email:password}
     """
-    user_dictionary = {}
-    with open(path, 'rt') as f:
-        reader = csv.reader(f, delimiter=',')
-        for row in reader:
-            user_dictionary[row[0]] = row[1]
-    yield user_dictionary[email]
+    for row in reader:
+        user_dictionary[row[0]] = row[1]
+        yield {row[0], row[1]}
