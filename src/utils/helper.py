@@ -19,8 +19,6 @@ def read_file(path=path_to_users, delimeter=','):
             rows.append(row)
     return rows
 
-file_content = read_file()
-
 
 def whether_in_file(email, rows=file_content):
     """
@@ -45,9 +43,6 @@ def form_dict_from_file(key_column=0, value_column=1,
     for row in rows:
         user_dictionary[row[key_column]] = row[value_column]
     return user_dictionary
-
-credentials = form_dict_from_file()
-usernames = form_dict_from_file(0, 2)
 
 def get_user_credentials(email):
     """

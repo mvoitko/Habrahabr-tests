@@ -46,4 +46,4 @@ class LoginPage(BasePage):
         self.fill('password field', password)
         self.check_capthca()
         self.click_on('login button')
-        # return MainPage(self.driver)
+        return MainPage(self.driver)

@@ -23,14 +23,14 @@ def step_impl(context, email):
 def step_impl(context):
     page = LoginPage(context)
     page.open()
-    page.login(context.email, credentials[context.email])
+    page.login(context.email, context.credentials[context.email])
 
 
 @then(u'I should see personalized page')
 def step_impl(context):
     page = MainPage(context)
     username = page.get_text('username')
-    assert_that(username, contains_string(usernames[context.email]))
+    assert_that(username, contains_string(context.usernames[context.email]))
 """
 
 @given(u'I am on the home page')

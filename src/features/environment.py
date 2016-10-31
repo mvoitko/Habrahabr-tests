@@ -8,6 +8,8 @@ from behave.log_capture import capture
 
 import logging
 
+from src.utils import helper
+
 
 logging.basicConfig(filename="test.log", level=logging.DEBUG)
 __logger__ = logging.getLogger("test")
@@ -18,6 +20,9 @@ def before_all(context):
     __logger__.info(">"*20)
     context.driver = webdriver.Firefox()
     context.driver.maximize_window()
+    context.file_content = read_file()
+    context.credentials = form_dict_from_file()
+    context.usernames = form_dict_from_file(0, 2)
 
 #@capture
 def after_all(context):
