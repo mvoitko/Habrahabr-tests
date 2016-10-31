@@ -4,6 +4,58 @@
 		"selected_items":
 		[
 			[
+				"loca",
+				"locators_dict\tstatement"
+			],
+			[
+				"loc",
+				"locators"
+			],
+			[
+				"Login",
+				"LoginLocators\tclass"
+			],
+			[
+				"log",
+				"loginLocators\tmodule"
+			],
+			[
+				"C",
+				"CLASS_NAME\tstatement"
+			],
+			[
+				"file",
+				"file_content\tstatement"
+			],
+			[
+				"base",
+				"base_url\tstatement"
+			],
+			[
+				"read",
+				"read_file\tfunction"
+			],
+			[
+				"form",
+				"form_user_dict\tfunction"
+			],
+			[
+				"cre",
+				"credentials"
+			],
+			[
+				"e",
+				"ENTER\tstatement"
+			],
+			[
+				"M",
+				"MainLocators\tclass"
+			],
+			[
+				"csv",
+				"csv_file"
+			],
+			[
 				"I",
 				"ID\tstatement"
 			],
@@ -80,41 +132,20 @@
 	"buffers":
 	[
 		{
-			"file": "src/features/steps/user_steps.py",
+			"file": "src/locators/loginLocators.py",
 			"settings":
 			{
-				"buffer_size": 913,
+				"buffer_size": 389,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "src/pages/loginPage.py",
+			"file": "src/locators/mainLocators.py",
 			"settings":
 			{
-				"buffer_size": 367,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"contents": "@smoke\nFeature: Logout\n    As user\n    I want to have possibilty to log out of my account\n\n    Scenario Outline: Logout\n        Given I am an authenticated user\n        When I enter \"<username>\" and \"<password>\"\n        And I click login button\n        Then I get interesting page",
-			"file": "src/features/logout.feature",
-			"file_size": 0,
-			"file_write_time": 131222987184209496,
-			"settings":
-			{
-				"buffer_size": 280,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"contents": "\"\"\"\nCreated on Oct 27, 2016\n\n@author: mvoitko\n\"\"\"\nimport logging\nfrom selenium import webdriver\nfrom selenium.webdriver.common.by import By\nfrom selenium.webdriver.support.ui import WebDriverWait\nfrom selenium.webdriver.support import expected_conditions as EC\nfrom selenium.webdriver.common.keys import Keys\n\n\nclass BasePage:\n    \"\"\"\n    Base page representation.\n    Contains all actions related to UI interaction.\n    All pages may be inherited from this class.\n    \"\"\"\n    def __init__(self, driver):\n        \"\"\"\n        :type browser: selenium.webdriver.*\n        \"\"\"\n        self.base_url = 'http://www.habrahabr.ru/'\n        self.driver = driver\n        self.timeout = 15\n        self.logger = logging.getLogger(self.__class__.__name__)\n\n    def open(self, url):\n        \"\"\"\n        Open given web page.\n        :type element: selenium.webdriver.remote.webelement.WebElement\n        \"\"\"\n        url = self.base_url + url\n        self.driver.get(url)\n\n    def find_elem_by_key(self, key):\n        key = key.replace(\" \", \"_\")\n        if key in self.locators_dictionary:\n            element_locator = locators_dictionary[key]\n        else:\n            raise Exception, \"Cannot find {0} locator on the {1} page\".format(key, str(self))\n        return element_locator\n\n    def find(self, key):\n        \"\"\"\n        Find element with specified locator.\n        :type element: selenium.webdriver.remote.webelement.WebElement\n        \"\"\"\n        locator = self.find_elem_by_key(key)\n        return WebDriverWait(self.driver, self.timeout).until(EC.presence_of_element_located(*locator))\n\n\n\n    def click_on(self, key):\n        \"\"\"\n        Click on element with specified locator.\n        :type element: selenium.webdriver.remote.webelement.WebElement\n        \"\"\"\n        element = self.driver.find(key)\n        element.click()\n\n    def fill(self, key, value):\n        \"\"\"\n        Fill element with specified value.\n        :type element: selenium.webdriver.remote.webelement.WebElement\n        \"\"\"\n        element = self.find(key)\n        element.clear()\n        element.send_keys(value)\n\n    def _highlight(self, element):\n        \"\"\"\n        Highlight given web element with red border using JS execution.\n        WARNING: Contains time.sleep in 1 sec between scrolling to element and highlighting\n        :type element: selenium.webdriver.remote.webelement.WebElement\n        \"\"\"\n        self.execute_script(element, 'scrollIntoView(true);')\n        sleep(1)\n        self.execute_script(element, 'setAttribute(\"style\", \"color: red; border: 5px solid red;\");')\n        sleep(1)\n        self.execute_script(element, 'setAttribute(\"style\", \"\");')",
-			"file": "src/pages/basePage.py",
-			"file_size": 2633,
-			"file_write_time": 131221701229213609,
-			"settings":
-			{
-				"buffer_size": 2643,
+				"buffer_size": 555,
+				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		}
@@ -142,10 +173,14 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 112.0,
-		"last_filter": "upg",
+		"height": 132.0,
+		"last_filter": "install",
 		"selected_items":
 		[
+			[
+				"install",
+				"Package Control: Install Package"
+			],
 			[
 				"upg",
 				"Package Control: Upgrade/Overwrite All Packages"
@@ -159,7 +194,7 @@
 				"Preferences: Browse Packages"
 			]
 		],
-		"width": 449.0
+		"width": 746.0
 	},
 	"console":
 	{
@@ -180,11 +215,43 @@
 	},
 	"expanded_folders":
 	[
-		"/home/mvoitko/Documents/projects/Habrahabr-tests/src",
-		"/home/mvoitko/Documents/projects/Habrahabr-tests/src/pages"
+		"/home/mvoitko/Documents/projects/Habrahabr_tests",
+		"/home/mvoitko/Documents/projects/Habrahabr_tests/reports",
+		"/home/mvoitko/Documents/projects/Habrahabr_tests/resources",
+		"/home/mvoitko/Documents/projects/Habrahabr_tests/src",
+		"/home/mvoitko/Documents/projects/Habrahabr_tests/src/features",
+		"/home/mvoitko/Documents/projects/Habrahabr_tests/src/features/steps",
+		"/home/mvoitko/Documents/projects/Habrahabr_tests/src/locators",
+		"/home/mvoitko/Documents/projects/Habrahabr_tests/src/pages",
+		"/home/mvoitko/Documents/projects/Habrahabr_tests/src/utils"
 	],
 	"file_history":
 	[
+		"/home/mvoitko/.config/sublime-text-3/Packages/Python PEP8 Autoformat/Default (Linux).sublime-keymap",
+		"/home/mvoitko/Documents/projects/Habrahabr_tests/src/features/environment.py",
+		"/home/mvoitko/Documents/projects/Habrahabr_tests/src/config.py",
+		"/home/mvoitko/Documents/projects/Habrahabr_tests/src/locators/mainLocators.py",
+		"/home/mvoitko/.config/sublime-text-3/Packages/DocBlockr_Python/DocblockrPython.sublime-settings",
+		"/home/mvoitko/.config/sublime-text-3/Packages/DocBlockr/Base File.sublime-settings",
+		"/home/mvoitko/.config/sublime-text-3/Packages/DocPy/DocPy.sublime-settings",
+		"/home/mvoitko/.config/sublime-text-3/Packages/User/DocblockrPython.sublime-settings",
+		"/home/mvoitko/Documents/projects/Habrahabr_tests/src/features/steps/user_steps.py",
+		"/home/mvoitko/Documents/projects/Habrahabr_tests/src/pages/basePage.py",
+		"/home/mvoitko/Documents/projects/Habrahabr_tests/src/locators/loginLocators.py",
+		"/home/mvoitko/Documents/projects/Habrahabr_tests/src/pages/loginPage.py",
+		"/home/mvoitko/Documents/projects/Habrahabr_tests/src/pages/mainPage.py",
+		"/home/mvoitko/Documents/projects/Habrahabr_tests/src/utils/helper.py",
+		"/home/mvoitko/Documents/projects/Habrahabr_tests/src/features/login.feature",
+		"/home/mvoitko/Documents/projects/Habrahabr_tests/.gitignore",
+		"/home/mvoitko/Documents/projects/Habrahabr_tests/README.md",
+		"/home/mvoitko/Documents/projects/Habrahabr_tests/resources/users.csv",
+		"/home/mvoitko/Documents/projects/Habrahabr_tests/src/features/logout.feature",
+		"/home/mvoitko/Documents/projects/Habrahabr_tests/src/features/search.feature",
+		"/home/mvoitko/Documents/projects/Habrahabr_tests/Habrahabr-project.sublime-project",
+		"/home/mvoitko/Documents/projects/Habrahabr_tests/test.log",
+		"/home/mvoitko/Documents/projects/Habrahabr_tests/behave.ini",
+		"/home/mvoitko/Documents/projects/Habrahabr_tests/src/utils/__init__.py",
+		"/home/mvoitko/Documents/projects/Habrahabr_tests/src/utils/сруслук",
 		"/home/mvoitko/Documents/projects/Habrahabr-tests/src/features/login.feature",
 		"/home/mvoitko/Documents/projects/Habrahabr-tests/behave.ini",
 		"/home/mvoitko/Documents/projects/Habrahabr-tests/src/features/edit_personal_details.feature",
@@ -279,24 +346,26 @@
 			[
 				{
 					"buffer": 0,
-					"file": "src/features/steps/user_steps.py",
+					"file": "src/locators/loginLocators.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 913,
+						"buffer_size": 389,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								913,
-								913
+								269,
+								269
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Python/Python.sublime-syntax"
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -307,77 +376,19 @@
 				},
 				{
 					"buffer": 1,
-					"file": "src/pages/loginPage.py",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 367,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "src/features/logout.feature",
+					"file": "src/locators/mainLocators.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 280,
+						"buffer_size": 555,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"auto_complete": false,
-							"open_with_edit": true,
-							"syntax": "Packages/Gherkin Auto-Complete Plus/Cucumber Plain Text Feature.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "src/pages/basePage.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2643,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1534,
-								1534
+								555,
+								555
 							]
 						],
 						"settings":
@@ -387,10 +398,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 90.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 0,
 					"type": "text"
 				}
 			]
@@ -429,7 +440,7 @@
 	"menu_visible": true,
 	"output.exec":
 	{
-		"height": 100.0
+		"height": 76.0
 	},
 	"output.find_results":
 	{

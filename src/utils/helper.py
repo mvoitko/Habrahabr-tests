@@ -21,6 +21,7 @@ def read_file(path=path_to_users, delimeter=','):
 
 file_content = read_file()
 
+
 def whether_in_file(email, rows=file_content):
     """
     Check if email is in CSV file.
@@ -33,15 +34,20 @@ def whether_in_file(email, rows=file_content):
             break
     return is_in_file
 
-def form_user_dict(rows=file_content):
+
+def form_dict_from_file(key_column=0, value_column=1,
+                        rows=file_content):
     """
     Parse credentials from CSV file to dictionary.
     :type dict: {email:password}
     """
     user_dictionary = {}
     for row in rows:
-        user_dictionary[row[0]] = row[1]
+        user_dictionary[row[key_column]] = row[value_column]
     return user_dictionary
+
+credentials = form_dict_from_file()
+usernames = form_dict_from_file(0, 2)
 
 def get_user_credentials(email):
     """

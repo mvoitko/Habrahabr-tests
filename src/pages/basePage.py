@@ -5,13 +5,12 @@ Created on Oct 27, 2016
 """
 import logging
 from selenium import webdriver
-from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.keys import Keys
 from selenium.common.exceptions import *
 
-from src import config
+from src.config import *
 
 
 class BasePage:
@@ -20,59 +19,68 @@ class BasePage:
     Contains all actions related to UI interaction.
     All pages may be inherited from this class.
     """
-    def __init__(self, driverm, base_url='http://www.habrahabr.ru/'):
+
+    def __init__(self, driver, url=base_url, locators_dictionary=None):
         """
         :type driver: selenium.webdriver.*
         """
-        self.base_url = base_url
+        self.url = base_url + url
         self.driver = driver
         self.timeout = 15
-        # self.logger = logging.getLogger(self.__class__.__name__)
+        self.locators_dictionary = locators_dictionary
 
-    def open(self, url):
+    def open(self):
         """
-        Open given web page.
+        Open page url.
         :type element: selenium.webdriver.remote.webelement.WebElement
         """
-        url = self.base_url + url
-        self.driver.get(url)
+        self.driver.get('http://habrahabr.ru/login')
 
     def _find_elem_by_key(self, key):
         """
         Find respective locator for the element in locators dictionary.
-        :type tuple: (method, value)
+        :type tuple: (strategy, value)
         """
-        key = key.replace(" ", "_")
+        key = key.upper().replace(" ", "_")
         if key in self.locators_dictionary:
-            element_locator = locators_dictionary[key]
+            element_locator = self.locators_dictionary[key]
+            return element_locator
         else:
-            raise AttributeError("Cannot find {0} locator on the {1} page".format(key, str(self)))
-        return element_locator
+            raise AttributeError(
+                "Cannot find {0} locator on the {1} page".format(key, str(self)))
 
     def find(self, key):
         """
         Find element with specified locator.
         :type element: selenium.webdriver.remote.webelement.WebElement
         """
-        locator = self.driver._find_elem_by_key(key)
-        return WebDriverWait(self.driver, self.timeout).until(EC.presence_of_element_located(*locator))
+        locator = self._find_elem_by_key(key)
+        print(locator)
+        WebDriverWait(self.driver, self.timeout).until(EC.presence_of_element_located(locator))
+        return self.driver.find_element(*locator)
 
     def click_on(self, key):
         """
         Click on element with specified locator.
-        :type element: selenium.webdriver.remote.webelement.WebElement
         """
-        element = self.driver.find(key)
+        element = self.find(key)
         element.click()
 
     def fill(self, key, value):
         """
         Fill element with specified value.
-        :type element: selenium.webdriver.remote.webelement.WebElement
         """
-        element = self.driver.find(key)
+        element = self.find(key)
         element.clear()
         element.send_keys(value)
+
+    def get_text(self, key):
+        """
+        Get element text.
+        :type str:
+        """
+        element = self.find(key)
+        return element.text
 
     def _highlight(self, element):
         """
@@ -82,6 +90,7 @@ class BasePage:
         """
         self.execute_script(element, 'scrollIntoView(true);')
         sleep(1)
-        self.execute_script(element, 'setAttribute("style", "color: red; border: 5px solid red;");')
+        self.execute_script(
+            element, 'setAttribute("style", "color: red; border: 5px solid red;");')
         sleep(1)
         self.execute_script(element, 'setAttribute("style", "");')

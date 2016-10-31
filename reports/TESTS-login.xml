@@ -1,31 +1,40 @@
-<testsuite errors="1" failures="0" name="login.Login" skipped="0" tests="1" time="0.000679"><testcase classname="login.Login" name="Login with correct credentials -- @1.1 " status="failed" time="0.000679"><error message="__init__() got an unexpected keyword argument 'url'" type="TypeError">
+<testsuite errors="1" failures="0" name="login.Login" skipped="0" tests="1" time="4.344534"><testcase classname="login.Login" name="Login with correct credentials -- @1.1 " status="failed" time="4.344534"><error message="'WebDriver' object has no attribute 'driver'" type="AttributeError">
 <![CDATA[
-Failing step: When I log in ... failed in 0.001s
+Failing step: When I log in ... failed in 4.344s
 Location: src/features/login.feature:9
 Traceback (most recent call last):
   File "/home/mvoitko/.virtualenvs/Habrahabr-tests/lib/python3.5/site-packages/behave/model.py", line 1456, in run
     match.run(runner.context)
   File "/home/mvoitko/.virtualenvs/Habrahabr-tests/lib/python3.5/site-packages/behave/model.py", line 1903, in run
     self.func(context, *args, **kwargs)
-  File "src/features/steps/user_steps.py", line 27, in step_impl
-    page = LoginPage(context)
-  File "/home/mvoitko/Documents/projects/Habrahabr_tests/src/pages/loginPage.py", line 20, in __init__
-    url='login')
-TypeError: __init__() got an unexpected keyword argument 'url'
+  File "src/features/steps/user_steps.py", line 25, in step_impl
+    page.login(context.email, credentials[context.email])
+  File "/home/mvoitko/Documents/projects/Habrahabr_tests/src/pages/loginPage.py", line 44, in login
+    return MainPage(self.driver)
+  File "/home/mvoitko/Documents/projects/Habrahabr_tests/src/pages/mainPage.py", line 20, in __init__
+    BasePage.__init__(self, context.driver, url='interesting', locators_dictionary=locators_dictionary)
+AttributeError: 'WebDriver' object has no attribute 'driver'
 
-Captured logging:
-INFO:test:BEFORE STEP
-INFO:test:AFTER STEP
-INFO:test:BEFORE STEP]]>
+Captured stdout:
+('id', 'email_field')
+('name', 'password')
+('name', 'go')
+]]>
 </error><system-out>
 <![CDATA[
 @scenario.begin
   Scenario Outline: Login with correct credentials -- @1.1 
-    Given I have an account for "habrtest@mailinator.com" ... passed in 0.000s
-    When I log in ... failed in 0.001s
-    Then I should see personalized page ... undefined in 0.000s
+    Given I have an account for "max.voitko@gmail.com" ... passed in 0.001s
+    When I log in ... failed in 4.344s
+    Then I should see personalized page ... skipped in 0.000s
 
 @scenario.end
 --------------------------------------------------------------------------------
+
+Captured stdout:
+('id', 'email_field')
+('name', 'password')
+('name', 'go')
+
 ]]>
 </system-out></testcase></testsuite>

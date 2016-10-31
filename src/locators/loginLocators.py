@@ -10,10 +10,13 @@ class LoginLocators:
     """
     A class for login page locators.
     Contains all login page locators.
-    : type : dict
+    :type dict:
     """
-    locators_dictionary: {
+
+    locators_dict = {
         "EMAIL_FIELD": (By.ID, 'email_field'),
-        "PASSWORD_FIELD" : (By.NAME, 'password'),
-        "LOGIN_BUTTON" = (By.NAME, 'go')
+        "PASSWORD_FIELD": (By.NAME, 'password'),
+        "LOGIN_BUTTON": (By.NAME, 'go'),
+        "IFRAME": 'iframe',
+        "CAPTCHA_CHECKBOX": (By.ID, 'recaptcha-anchor')
     }

@@ -11,6 +11,7 @@ Feature: Login
 
 	    Examples:
 		    | email                    |
-		    | habrtest@mailinator.com  |
+		    | max.voitko@gmail.com     |
+		    # | habrtest@mailinator.com  |
 		    # | habr_test@mailinator.com |
 		    # | 044244244@mailinator.com |

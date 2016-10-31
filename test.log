@@ -1,282 +1,217 @@
 DEBUG:parse:format 'I have an account for "{email}"' -> 'I have an account for "(?P<email>.+?)"'
+DEBUG:parse:format 'I log in' -> 'I log in'
+DEBUG:parse:format 'I should see personalized page' -> 'I should see personalized page'
 INFO:test:BEFORE ALL
 INFO:test:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-INFO:test:BEFORE FEATURE
-INFO:test:>>>>>>>>>>>>>>
-INFO:test:BEFORE SCENARIO
-INFO:test:==>>
-INFO:test:<<==
-INFO:test:AFTER SCENARIO
-INFO:test:BEFORE SCENARIO
-INFO:test:==>>
-INFO:test:<<==
-INFO:test:AFTER SCENARIO
-INFO:test:BEFORE SCENARIO
-INFO:test:==>>
-INFO:test:<<==
-INFO:test:AFTER SCENARIO
-INFO:test:<<<<<<<<<<<<<
-INFO:test:AFTER FEATURE
-INFO:test:BEFORE FEATURE
-INFO:test:>>>>>>>>>>>>>>
-INFO:test:<<<<<<<<<<<<<
-INFO:test:AFTER FEATURE
-INFO:test:BEFORE FEATURE
-INFO:test:>>>>>>>>>>>>>>
-INFO:test:BEFORE SCENARIO
-INFO:test:==>>
-INFO:test:<<==
-INFO:test:AFTER SCENARIO
-INFO:test:<<<<<<<<<<<<<
-INFO:test:AFTER FEATURE
-INFO:test:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-INFO:test:AFTER FEATURE
-DEBUG:parse:format 'I have an account for "{email}"' -> 'I have an account for "(?P<email>.+?)"'
-INFO:test:BEFORE ALL
-INFO:test:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-INFO:test:BEFORE FEATURE
-INFO:test:>>>>>>>>>>>>>>
-INFO:test:BEFORE SCENARIO
-INFO:test:==>>
-INFO:test:<<==
-INFO:test:AFTER SCENARIO
-INFO:test:BEFORE SCENARIO
-INFO:test:==>>
-INFO:test:<<==
-INFO:test:AFTER SCENARIO
-INFO:test:BEFORE SCENARIO
-INFO:test:==>>
-INFO:test:<<==
-INFO:test:AFTER SCENARIO
-INFO:test:<<<<<<<<<<<<<
-INFO:test:AFTER FEATURE
-INFO:test:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-INFO:test:AFTER FEATURE
-DEBUG:parse:format 'I have an account for "{email}"' -> 'I have an account for "(?P<email>.+?)"'
-INFO:test:BEFORE ALL
-INFO:test:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-INFO:test:BEFORE FEATURE
-INFO:test:>>>>>>>>>>>>>>
-INFO:test:BEFORE SCENARIO
-INFO:test:==>>
-INFO:test:<<==
-INFO:test:AFTER SCENARIO
-INFO:test:BEFORE SCENARIO
-INFO:test:==>>
-INFO:test:<<==
-INFO:test:AFTER SCENARIO
-INFO:test:BEFORE SCENARIO
-INFO:test:==>>
-INFO:test:<<==
-INFO:test:AFTER SCENARIO
-INFO:test:<<<<<<<<<<<<<
-INFO:test:AFTER FEATURE
-INFO:test:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-INFO:test:AFTER FEATURE
-DEBUG:parse:format 'I have an account for "{email}"' -> 'I have an account for "(?P<email>.+?)"'
-INFO:test:BEFORE ALL
-INFO:test:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-INFO:test:BEFORE FEATURE
-INFO:test:>>>>>>>>>>>>>>
-INFO:test:BEFORE SCENARIO
-INFO:test:==>>
-INFO:test:BEFORE STEP
-INFO:test:AFTER STEP
-INFO:test:<<==
-INFO:test:AFTER SCENARIO
-INFO:test:BEFORE SCENARIO
-INFO:test:==>>
-INFO:test:BEFORE STEP
-INFO:test:AFTER STEP
-INFO:test:<<==
-INFO:test:AFTER SCENARIO
-INFO:test:BEFORE SCENARIO
-INFO:test:==>>
-INFO:test:BEFORE STEP
-INFO:test:AFTER STEP
-INFO:test:<<==
-INFO:test:AFTER SCENARIO
-INFO:test:<<<<<<<<<<<<<
-INFO:test:AFTER FEATURE
-INFO:test:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-INFO:test:AFTER FEATURE
-DEBUG:parse:format 'I have an account for "{email}"' -> 'I have an account for "(?P<email>.+?)"'
-INFO:test:BEFORE ALL
-INFO:test:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-INFO:test:BEFORE FEATURE
-INFO:test:>>>>>>>>>>>>>>
-INFO:test:BEFORE SCENARIO
-INFO:test:==>>
-INFO:test:BEFORE STEP
-INFO:test:AFTER STEP
-INFO:test:<<==
-INFO:test:AFTER SCENARIO
-INFO:test:BEFORE SCENARIO
-INFO:test:==>>
-INFO:test:BEFORE STEP
-INFO:test:AFTER STEP
-INFO:test:<<==
-INFO:test:AFTER SCENARIO
-INFO:test:BEFORE SCENARIO
-INFO:test:==>>
-INFO:test:BEFORE STEP
-INFO:test:AFTER STEP
-INFO:test:<<==
-INFO:test:AFTER SCENARIO
-INFO:test:<<<<<<<<<<<<<
-INFO:test:AFTER FEATURE
-INFO:test:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-INFO:test:AFTER FEATURE
-DEBUG:parse:format 'I have an account for "{email}"' -> 'I have an account for "(?P<email>.+?)"'
-INFO:test:BEFORE ALL
-INFO:test:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-INFO:test:BEFORE FEATURE
-INFO:test:>>>>>>>>>>>>>>
-INFO:test:BEFORE SCENARIO
-INFO:test:==>>
-INFO:test:BEFORE STEP
-INFO:test:AFTER STEP
-INFO:test:<<==
-INFO:test:AFTER SCENARIO
-INFO:test:<<<<<<<<<<<<<
-INFO:test:AFTER FEATURE
 INFO:test:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 INFO:test:AFTER FEATURE
 DEBUG:parse:format 'I have an account for "{email}"' -> 'I have an account for "(?P<email>.+?)"'
 DEBUG:parse:format 'I log in' -> 'I log in'
+DEBUG:parse:format 'I should see personalized page' -> 'I should see personalized page'
 INFO:test:BEFORE ALL
 INFO:test:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-INFO:test:BEFORE FEATURE
-INFO:test:>>>>>>>>>>>>>>
-INFO:test:BEFORE SCENARIO
-INFO:test:==>>
-INFO:test:BEFORE STEP
-INFO:test:AFTER STEP
-INFO:test:BEFORE STEP
-INFO:test:AFTER STEP
-INFO:test:<<==
-INFO:test:AFTER SCENARIO
-INFO:test:<<<<<<<<<<<<<
-INFO:test:AFTER FEATURE
 INFO:test:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 INFO:test:AFTER FEATURE
 DEBUG:parse:format 'I have an account for "{email}"' -> 'I have an account for "(?P<email>.+?)"'
 DEBUG:parse:format 'I log in' -> 'I log in'
+DEBUG:parse:format 'I should see personalized page' -> 'I should see personalized page'
 INFO:test:BEFORE ALL
 INFO:test:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-INFO:test:BEFORE FEATURE
-INFO:test:>>>>>>>>>>>>>>
-INFO:test:BEFORE SCENARIO
-INFO:test:==>>
-INFO:test:BEFORE STEP
-INFO:test:AFTER STEP
-INFO:test:BEFORE STEP
-INFO:test:AFTER STEP
-INFO:test:<<==
-INFO:test:AFTER SCENARIO
-INFO:test:<<<<<<<<<<<<<
-INFO:test:AFTER FEATURE
-INFO:test:BEFORE FEATURE
-INFO:test:>>>>>>>>>>>>>>
-INFO:test:<<<<<<<<<<<<<
-INFO:test:AFTER FEATURE
-INFO:test:BEFORE FEATURE
-INFO:test:>>>>>>>>>>>>>>
-INFO:test:BEFORE SCENARIO
-INFO:test:==>>
-INFO:test:<<==
-INFO:test:AFTER SCENARIO
-INFO:test:<<<<<<<<<<<<<
-INFO:test:AFTER FEATURE
 INFO:test:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 INFO:test:AFTER FEATURE
 DEBUG:parse:format 'I have an account for "{email}"' -> 'I have an account for "(?P<email>.+?)"'
 DEBUG:parse:format 'I log in' -> 'I log in'
+DEBUG:parse:format 'I should see personalized page' -> 'I should see personalized page'
 INFO:test:BEFORE ALL
 INFO:test:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-INFO:test:BEFORE FEATURE
-INFO:test:>>>>>>>>>>>>>>
-INFO:test:BEFORE SCENARIO
-INFO:test:==>>
-INFO:test:BEFORE STEP
-INFO:test:AFTER STEP
-INFO:test:BEFORE STEP
-INFO:test:AFTER STEP
-INFO:test:<<==
-INFO:test:AFTER SCENARIO
-INFO:test:<<<<<<<<<<<<<
-INFO:test:AFTER FEATURE
 INFO:test:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 INFO:test:AFTER FEATURE
 DEBUG:parse:format 'I have an account for "{email}"' -> 'I have an account for "(?P<email>.+?)"'
 DEBUG:parse:format 'I log in' -> 'I log in'
+DEBUG:parse:format 'I should see personalized page' -> 'I should see personalized page'
 INFO:test:BEFORE ALL
 INFO:test:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-INFO:test:BEFORE FEATURE
-INFO:test:>>>>>>>>>>>>>>
-INFO:test:BEFORE SCENARIO
-INFO:test:==>>
-INFO:test:BEFORE STEP
-INFO:test:AFTER STEP
-INFO:test:BEFORE STEP
-INFO:test:AFTER STEP
-INFO:test:<<==
-INFO:test:AFTER SCENARIO
-INFO:test:<<<<<<<<<<<<<
-INFO:test:AFTER FEATURE
 INFO:test:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 INFO:test:AFTER FEATURE
 DEBUG:parse:format 'I have an account for "{email}"' -> 'I have an account for "(?P<email>.+?)"'
 DEBUG:parse:format 'I log in' -> 'I log in'
+DEBUG:parse:format 'I should see personalized page' -> 'I should see personalized page'
 INFO:test:BEFORE ALL
 INFO:test:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-INFO:test:BEFORE FEATURE
-INFO:test:>>>>>>>>>>>>>>
-INFO:test:BEFORE SCENARIO
-INFO:test:==>>
-INFO:test:BEFORE STEP
-INFO:test:AFTER STEP
-INFO:test:BEFORE STEP
-INFO:test:AFTER STEP
-INFO:test:<<==
-INFO:test:AFTER SCENARIO
-INFO:test:<<<<<<<<<<<<<
-INFO:test:AFTER FEATURE
 INFO:test:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 INFO:test:AFTER FEATURE
 DEBUG:parse:format 'I have an account for "{email}"' -> 'I have an account for "(?P<email>.+?)"'
 DEBUG:parse:format 'I log in' -> 'I log in'
+DEBUG:parse:format 'I should see personalized page' -> 'I should see personalized page'
 INFO:test:BEFORE ALL
 INFO:test:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-INFO:test:BEFORE FEATURE
-INFO:test:>>>>>>>>>>>>>>
-INFO:test:BEFORE SCENARIO
-INFO:test:==>>
-INFO:test:BEFORE STEP
-INFO:test:AFTER STEP
-INFO:test:BEFORE STEP
-INFO:test:AFTER STEP
-INFO:test:<<==
-INFO:test:AFTER SCENARIO
-INFO:test:<<<<<<<<<<<<<
-INFO:test:AFTER FEATURE
 INFO:test:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 INFO:test:AFTER FEATURE
 DEBUG:parse:format 'I have an account for "{email}"' -> 'I have an account for "(?P<email>.+?)"'
 DEBUG:parse:format 'I log in' -> 'I log in'
+DEBUG:parse:format 'I should see personalized page' -> 'I should see personalized page'
 INFO:test:BEFORE ALL
 INFO:test:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-INFO:test:BEFORE FEATURE
-INFO:test:>>>>>>>>>>>>>>
-INFO:test:BEFORE SCENARIO
-INFO:test:==>>
-INFO:test:BEFORE STEP
-INFO:test:AFTER STEP
-INFO:test:BEFORE STEP
-INFO:test:AFTER STEP
-INFO:test:<<==
-INFO:test:AFTER SCENARIO
-INFO:test:<<<<<<<<<<<<<
+INFO:test:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 INFO:test:AFTER FEATURE
+DEBUG:parse:format 'I have an account for "{email}"' -> 'I have an account for "(?P<email>.+?)"'
+DEBUG:parse:format 'I log in' -> 'I log in'
+DEBUG:parse:format 'I should see personalized page' -> 'I should see personalized page'
+INFO:test:BEFORE ALL
+INFO:test:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+INFO:test:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+INFO:test:AFTER FEATURE
+DEBUG:parse:format 'I have an account for "{email}"' -> 'I have an account for "(?P<email>.+?)"'
+DEBUG:parse:format 'I log in' -> 'I log in'
+DEBUG:parse:format 'I should see personalized page' -> 'I should see personalized page'
+INFO:test:BEFORE ALL
+INFO:test:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+INFO:test:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+INFO:test:AFTER FEATURE
+DEBUG:parse:format 'I have an account for "{email}"' -> 'I have an account for "(?P<email>.+?)"'
+DEBUG:parse:format 'I log in' -> 'I log in'
+DEBUG:parse:format 'I should see personalized page' -> 'I should see personalized page'
+INFO:test:BEFORE ALL
+INFO:test:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+INFO:test:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+INFO:test:AFTER FEATURE
+DEBUG:parse:format 'I have an account for "{email}"' -> 'I have an account for "(?P<email>.+?)"'
+DEBUG:parse:format 'I log in' -> 'I log in'
+DEBUG:parse:format 'I should see personalized page' -> 'I should see personalized page'
+INFO:test:BEFORE ALL
+INFO:test:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+INFO:test:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+INFO:test:AFTER FEATURE
+DEBUG:parse:format 'I have an account for "{email}"' -> 'I have an account for "(?P<email>.+?)"'
+DEBUG:parse:format 'I log in' -> 'I log in'
+DEBUG:parse:format 'I should see personalized page' -> 'I should see personalized page'
+INFO:test:BEFORE ALL
+INFO:test:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+INFO:test:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+INFO:test:AFTER FEATURE
+DEBUG:parse:format 'I have an account for "{email}"' -> 'I have an account for "(?P<email>.+?)"'
+DEBUG:parse:format 'I log in' -> 'I log in'
+DEBUG:parse:format 'I should see personalized page' -> 'I should see personalized page'
+INFO:test:BEFORE ALL
+INFO:test:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+INFO:test:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+INFO:test:AFTER FEATURE
+DEBUG:parse:format 'I have an account for "{email}"' -> 'I have an account for "(?P<email>.+?)"'
+DEBUG:parse:format 'I log in' -> 'I log in'
+DEBUG:parse:format 'I should see personalized page' -> 'I should see personalized page'
+INFO:test:BEFORE ALL
+INFO:test:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+INFO:test:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+INFO:test:AFTER FEATURE
+DEBUG:parse:format 'I have an account for "{email}"' -> 'I have an account for "(?P<email>.+?)"'
+DEBUG:parse:format 'I log in' -> 'I log in'
+DEBUG:parse:format 'I should see personalized page' -> 'I should see personalized page'
+INFO:test:BEFORE ALL
+INFO:test:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+INFO:test:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+INFO:test:AFTER FEATURE
+DEBUG:parse:format 'I have an account for "{email}"' -> 'I have an account for "(?P<email>.+?)"'
+DEBUG:parse:format 'I log in' -> 'I log in'
+DEBUG:parse:format 'I should see personalized page' -> 'I should see personalized page'
+INFO:test:BEFORE ALL
+INFO:test:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+INFO:test:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+INFO:test:AFTER FEATURE
+DEBUG:parse:format 'I have an account for "{email}"' -> 'I have an account for "(?P<email>.+?)"'
+DEBUG:parse:format 'I log in' -> 'I log in'
+DEBUG:parse:format 'I should see personalized page' -> 'I should see personalized page'
+INFO:test:BEFORE ALL
+INFO:test:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+INFO:test:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+INFO:test:AFTER FEATURE
+DEBUG:parse:format 'I have an account for "{email}"' -> 'I have an account for "(?P<email>.+?)"'
+DEBUG:parse:format 'I log in' -> 'I log in'
+DEBUG:parse:format 'I should see personalized page' -> 'I should see personalized page'
+INFO:test:BEFORE ALL
+INFO:test:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+INFO:test:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+INFO:test:AFTER FEATURE
+DEBUG:parse:format 'I have an account for "{email}"' -> 'I have an account for "(?P<email>.+?)"'
+DEBUG:parse:format 'I log in' -> 'I log in'
+DEBUG:parse:format 'I should see personalized page' -> 'I should see personalized page'
+INFO:test:BEFORE ALL
+INFO:test:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+INFO:test:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+INFO:test:AFTER FEATURE
+DEBUG:parse:format 'I have an account for "{email}"' -> 'I have an account for "(?P<email>.+?)"'
+DEBUG:parse:format 'I log in' -> 'I log in'
+DEBUG:parse:format 'I should see personalized page' -> 'I should see personalized page'
+INFO:test:BEFORE ALL
+INFO:test:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+INFO:test:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+INFO:test:AFTER FEATURE
+DEBUG:parse:format 'I have an account for "{email}"' -> 'I have an account for "(?P<email>.+?)"'
+DEBUG:parse:format 'I log in' -> 'I log in'
+DEBUG:parse:format 'I should see personalized page' -> 'I should see personalized page'
+INFO:test:BEFORE ALL
+INFO:test:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+INFO:test:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+INFO:test:AFTER FEATURE
+DEBUG:parse:format 'I have an account for "{email}"' -> 'I have an account for "(?P<email>.+?)"'
+DEBUG:parse:format 'I log in' -> 'I log in'
+DEBUG:parse:format 'I should see personalized page' -> 'I should see personalized page'
+INFO:test:BEFORE ALL
+INFO:test:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+INFO:test:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+INFO:test:AFTER FEATURE
+DEBUG:parse:format 'I have an account for "{email}"' -> 'I have an account for "(?P<email>.+?)"'
+DEBUG:parse:format 'I log in' -> 'I log in'
+DEBUG:parse:format 'I should see personalized page' -> 'I should see personalized page'
+INFO:test:BEFORE ALL
+INFO:test:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+INFO:test:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+INFO:test:AFTER FEATURE
+DEBUG:parse:format 'I have an account for "{email}"' -> 'I have an account for "(?P<email>.+?)"'
+DEBUG:parse:format 'I log in' -> 'I log in'
+DEBUG:parse:format 'I should see personalized page' -> 'I should see personalized page'
+INFO:test:BEFORE ALL
+INFO:test:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+INFO:test:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+INFO:test:AFTER FEATURE
+DEBUG:parse:format 'I have an account for "{email}"' -> 'I have an account for "(?P<email>.+?)"'
+DEBUG:parse:format 'I log in' -> 'I log in'
+DEBUG:parse:format 'I should see personalized page' -> 'I should see personalized page'
+INFO:test:BEFORE ALL
+INFO:test:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+INFO:test:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+INFO:test:AFTER FEATURE
+DEBUG:parse:format 'I have an account for "{email}"' -> 'I have an account for "(?P<email>.+?)"'
+DEBUG:parse:format 'I log in' -> 'I log in'
+DEBUG:parse:format 'I should see personalized page' -> 'I should see personalized page'
+INFO:test:BEFORE ALL
+INFO:test:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+INFO:test:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+INFO:test:AFTER FEATURE
+DEBUG:parse:format 'I have an account for "{email}"' -> 'I have an account for "(?P<email>.+?)"'
+DEBUG:parse:format 'I log in' -> 'I log in'
+DEBUG:parse:format 'I should see personalized page' -> 'I should see personalized page'
+INFO:test:BEFORE ALL
+INFO:test:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+INFO:test:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+INFO:test:AFTER FEATURE
+DEBUG:parse:format 'I have an account for "{email}"' -> 'I have an account for "(?P<email>.+?)"'
+DEBUG:parse:format 'I log in' -> 'I log in'
+DEBUG:parse:format 'I should see personalized page' -> 'I should see personalized page'
+INFO:test:BEFORE ALL
+INFO:test:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+INFO:test:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+INFO:test:AFTER FEATURE
+DEBUG:parse:format 'I have an account for "{email}"' -> 'I have an account for "(?P<email>.+?)"'
+DEBUG:parse:format 'I log in' -> 'I log in'
+DEBUG:parse:format 'I should see personalized page' -> 'I should see personalized page'
+INFO:test:BEFORE ALL
+INFO:test:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+INFO:test:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+INFO:test:AFTER FEATURE
+DEBUG:parse:format 'I have an account for "{email}"' -> 'I have an account for "(?P<email>.+?)"'
+DEBUG:parse:format 'I log in' -> 'I log in'
+DEBUG:parse:format 'I should see personalized page' -> 'I should see personalized page'
+INFO:test:BEFORE ALL
+INFO:test:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 INFO:test:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 INFO:test:AFTER FEATURE
