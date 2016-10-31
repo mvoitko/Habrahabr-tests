@@ -1,49 +1,49 @@
-<testsuite errors="1" failures="0" name="login.Login" skipped="0" tests="1" time="2.209065"><testcase classname="login.Login" name="Login with correct credentials -- @1.1 " status="failed" time="2.209065"><error message="Message: POST /session/52f101e3-6ff8-4a15-a482-82526c2415a5/moveto did not match..." type="WebDriverException">
+<testsuite errors="0" failures="3" name="login.Login" skipped="0" tests="3" time="0.0"><testcase classname="login.Login" name="Login with correct credentials -- @1.1 " status="failed" time="0"><failure message="None" type="NoneType">
 <![CDATA[
-Failing step: When I log in ... failed in 2.209s
-Location: src/features/login.feature:9
-Traceback (most recent call last):
-  File "/home/mvoitko/.virtualenvs/Habrahabr-tests/lib/python3.5/site-packages/behave/model.py", line 1456, in run
-    match.run(runner.context)
-  File "/home/mvoitko/.virtualenvs/Habrahabr-tests/lib/python3.5/site-packages/behave/model.py", line 1903, in run
-    self.func(context, *args, **kwargs)
-  File "src/features/steps/user_steps.py", line 25, in step_impl
-    page.login(context.email, credentials[context.email])
-  File "/home/mvoitko/Documents/projects/Habrahabr_tests/src/pages/loginPage.py", line 47, in login
-    self.check_capthca()
-  File "/home/mvoitko/Documents/projects/Habrahabr_tests/src/pages/loginPage.py", line 34, in check_capthca
-    action.perform()
-  File "/home/mvoitko/.virtualenvs/Habrahabr-tests/lib/python3.5/site-packages/selenium/webdriver/common/action_chains.py", line 74, in perform
-    action()
-  File "/home/mvoitko/.virtualenvs/Habrahabr-tests/lib/python3.5/site-packages/selenium/webdriver/common/action_chains.py", line 225, in <lambda>
-    Command.MOVE_TO, {'element': to_element.id}))
-  File "/home/mvoitko/.virtualenvs/Habrahabr-tests/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 236, in execute
-    self.error_handler.check_response(response)
-  File "/home/mvoitko/.virtualenvs/Habrahabr-tests/lib/python3.5/site-packages/selenium/webdriver/remote/errorhandler.py", line 192, in check_response
-    raise exception_class(message, screen, stacktrace)
-selenium.common.exceptions.WebDriverException: Message: POST /session/52f101e3-6ff8-4a15-a482-82526c2415a5/moveto did not match a known command
-
-
-Captured stdout:
-('id', 'email_field')
-('name', 'password')
-Fail
-]]>
-</error><system-out>
+Failing step: Given I have an account for "habrtest@mailinator.com" ... undefined in 0.000s
+Location: src/features/login.feature:7
+None]]>
+</failure><system-out>
 <![CDATA[
 @scenario.begin
   Scenario Outline: Login with correct credentials -- @1.1 
-    Given I have an account for "max.voitko@gmail.com" ... passed in 0.000s
-    When I log in ... failed in 2.209s
-    Then I should see personalized page ... skipped in 0.000s
+    Given I have an account for "habrtest@mailinator.com" ... undefined in 0.000s
+    When I log in ... undefined in 0.000s
+    Then I should see personalized page ... undefined in 0.000s
 
 @scenario.end
 --------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="login.Login" name="Login with correct credentials -- @1.2 " status="failed" time="0"><failure message="None" type="NoneType">
+<![CDATA[
+Failing step: Given I have an account for "habr_test@mailinator.com" ... undefined in 0.000s
+Location: src/features/login.feature:7
+None]]>
+</failure><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario Outline: Login with correct credentials -- @1.2 
+    Given I have an account for "habr_test@mailinator.com" ... undefined in 0.000s
+    When I log in ... undefined in 0.000s
+    Then I should see personalized page ... undefined in 0.000s
 
-Captured stdout:
-('id', 'email_field')
-('name', 'password')
-Fail
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="login.Login" name="Login with correct credentials -- @1.3 " status="failed" time="0"><failure message="None" type="NoneType">
+<![CDATA[
+Failing step: Given I have an account for "044244244@mailinator.com" ... undefined in 0.000s
+Location: src/features/login.feature:7
+None]]>
+</failure><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario Outline: Login with correct credentials -- @1.3 
+    Given I have an account for "044244244@mailinator.com" ... undefined in 0.000s
+    When I log in ... undefined in 0.000s
+    Then I should see personalized page ... undefined in 0.000s
 
+@scenario.end
+--------------------------------------------------------------------------------
 ]]>
 </system-out></testcase></testsuite>

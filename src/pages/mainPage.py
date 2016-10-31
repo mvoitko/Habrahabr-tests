@@ -17,7 +17,7 @@ class MainPage(BasePage):
     """
 
     def __init__(self, context):
-        BasePage.__init__(self, context.driver, url='interesting', locators_dictionary=locators_dictionary)
+        BasePage.__init__(self, context.driver, url='interesting', locators_dictionary=MainLocators.locators_dictionary)
 
     def search(self, querry):
         """

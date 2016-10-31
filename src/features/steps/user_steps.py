@@ -7,11 +7,12 @@ from behave import *
 from hamcrest import *
 
 from src.pages.loginPage import LoginPage
+from src.pages.mainPage import MainPage
 from src.utils.helper import *
 
 
 # use_step_matcher('re')
-
+"""
 @given(u'I have an account for "{email}"')
 def step_impl(context, email):
     context.email = email
@@ -30,6 +31,7 @@ def step_impl(context):
     page = MainPage(context)
     username = page.get_text('username')
     assert_that(username, contains_string(usernames[context.email]))
+"""
 
 @given(u'I am on the home page')
 def step_impl(context):
@@ -46,9 +48,10 @@ def step_impl(context, querry):
 @then(u'I should be on the results page')
 def step_impl(context):
     page = MainPage(context)
+    current_url = page.get_current_url()
     page_title = page.get_page_title()
+    assert_that(current_url, contains_string(querry))
     assert_that(page_title, contains_string(''))
 
-@then(u'the first search result should be visible')
-def step_impl(context):
-
+# @then(u'the first search result should be visible')
+# def step_impl(context):

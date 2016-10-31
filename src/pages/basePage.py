@@ -34,7 +34,7 @@ class BasePage:
         Open page url.
         :type element: selenium.webdriver.remote.webelement.WebElement
         """
-        self.driver.get('http://habrahabr.ru/login')
+        self.driver.get(self.url)
 
     def _find_elem_by_key(self, key):
         """

@@ -15,34 +15,34 @@ __logger__ = logging.getLogger("test")
 #@capture
 def before_all(context):
     __logger__.info("BEFORE ALL")
-    __logger__.info(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
+    __logger__.info(">"*20)
     context.driver = webdriver.Firefox()
     context.driver.maximize_window()
 
 #@capture
 def after_all(context):
-    __logger__.info("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<")
+    __logger__.info("<"*20)
     __logger__.info("AFTER FEATURE")
     # context.driver.quit()
 
 # #@capture
 # def before_feature(context, feature):
 #     __logger__.info("BEFORE FEATURE")
-#     __logger__.info(">>>>>>>>>>>>>>")
+#     __logger__.info(">"*10)
 
 # #@capture
 # def after_feature(context, feature):
-#     __logger__.info("<<<<<<<<<<<<<")
+#     __logger__.info("<"*10)
 #     __logger__.info("AFTER FEATURE")
 
 # #@capture
 # def before_scenario(context, scenario):
 #     __logger__.info("BEFORE SCENARIO")
-#     __logger__.info("==>>")
+#     __logger__.info("="*2+">"*2)
 
 # #@capture
 # def after_scenario(context, scenario):
-#     __logger__.info("<<==")
+#     __logger__.info("<"*2+"="*2)
 #     __logger__.info("AFTER SCENARIO")
 
 # #@capture

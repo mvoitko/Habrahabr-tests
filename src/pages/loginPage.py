@@ -9,7 +9,7 @@ from selenium.webdriver.common.action_chains import ActionChains
 
 from src.pages.basePage import BasePage
 from src.pages.mainPage import MainPage
-from src.locators.loginLocators import LoginLocators as ll
+from src.locators.loginLocators import LoginLocators
 
 
 class LoginPage(BasePage):
@@ -20,7 +20,7 @@ class LoginPage(BasePage):
 
     def __init__(self, context):
         BasePage.__init__(self, context.driver, url='login',
-                          locators_dictionary=ll.locators_dict)
+                          locators_dictionary=LoginLocators.locators_dict)
 
     # def switch_to_iframe(self):
     #     frame = self.find('iframe')

@@ -1,16 +1,23 @@
-<testsuite errors="0" failures="1" name="search.Search" skipped="0" tests="1" time="0.0"><testcase classname="search.Search" name="I would like to search for a topic" status="failed" time="0"><failure message="None" type="NoneType">
+<testsuite errors="1" failures="0" name="search.Search" skipped="0" tests="1" time="4.042015"><testcase classname="search.Search" name="I would like to search for a topic" status="failed" time="4.042015"><error message="name 'page' is not defined" type="NameError">
 <![CDATA[
-Failing step: Given I am on the home page ... undefined in 0.000s
-Location: src/features/search.feature:8
-None]]>
-</failure><system-out>
+Failing step: When I search for "python testing with behave" ... failed in 0.000s
+Location: src/features/search.feature:9
+Traceback (most recent call last):
+  File "/home/mvoitko/.virtualenvs/Habrahabr-tests/lib/python3.5/site-packages/behave/model.py", line 1456, in run
+    match.run(runner.context)
+  File "/home/mvoitko/.virtualenvs/Habrahabr-tests/lib/python3.5/site-packages/behave/model.py", line 1903, in run
+    self.func(context, *args, **kwargs)
+  File "src/features/steps/user_steps.py", line 45, in step_impl
+    page.search(context.querry)
+NameError: name 'page' is not defined
+]]>
+</error><system-out>
 <![CDATA[
 @scenario.begin
   Scenario: I would like to search for a topic
-    Given I am on the home page ... undefined in 0.000s
-    When I search for "python testing with behave" ... undefined in 0.000s
-    Then I should be on the results page ... undefined in 0.000s
-    And the first search result should be visible ... undefined in 0.000s
+    Given I am on the home page ... passed in 4.042s
+    When I search for "python testing with behave" ... failed in 0.000s
+    Then I should be on the results page ... skipped in 0.000s
 
 @scenario.end
 --------------------------------------------------------------------------------
