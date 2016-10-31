@@ -48,7 +48,6 @@ def step_impl(context, querry):
 @then(u'I should be on the results page')
 def step_impl(context):
     page = MainPage(context.driver)
-    current_url = page.get_current_url()
     page_title = page.get_page_title()
     assert_that(page_title, contains_string(context.querry))
 

@@ -7,7 +7,7 @@ This framework tests the basic functionality of Habrahabr web-app.
 
 ```shell
 git clone git@github.com:mvoitko/Habrahabr-tests.git
-cd path/to/Habrahabr-tests/src
+cd path/to/Habrahabr-tests
 pip install -r requirements.txt
 ```
 

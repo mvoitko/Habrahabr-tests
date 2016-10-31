@@ -18,7 +18,7 @@ class LoginPage(BasePage):
     Login Habrahabr page representation.
     Class for UI actions related to this page
     """
-
+    url = 'login'
     locators_dictionary = LoginLocators.locators_dictionary
 
     # def switch_to_iframe(self):

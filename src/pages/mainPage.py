@@ -6,6 +6,7 @@ Created on Oct 28, 2016
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 
+from src import config
 from src.pages.basePage import BasePage
 from src.locators.mainLocators import MainLocators
 
@@ -16,7 +17,7 @@ class MainPage(BasePage):
     Class for UI actions related to this page
     """
 
-    url = 'interesting'
+    url = config.base_url + 'interesting'
     locators_dictionary = MainLocators.locators_dictionary
 
     def search(self, querry):

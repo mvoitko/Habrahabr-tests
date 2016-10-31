@@ -20,21 +20,20 @@ class BasePage:
     All pages may be inherited from this class.
     """
 
-    def __init__(self, driver, url=base_url):
+    def __init__(self, driver):
         """
         :type driver: selenium.webdriver.*
         """
         self.driver = driver
-        self.url = base_url + url
         self.timeout = 15
 
-    def open(self):
+    def open(cls):
         """
         Open page url.
         :type url: str - URL to open
         :return: element: selenium.webdriver.remote.webelement.WebElement
         """
-        self.driver.get(self.url)
+        cls.driver.get(cls.url)
 
     def _find_elem_by_key(cls, key):
         """
