@@ -1,25 +1,31 @@
-<testsuite errors="1" failures="0" name="search.Search" skipped="0" tests="1" time="4.042015"><testcase classname="search.Search" name="I would like to search for a topic" status="failed" time="4.042015"><error message="name 'page' is not defined" type="NameError">
+<testsuite errors="0" failures="1" name="search.Search" skipped="0" tests="1" time="9.514099"><testcase classname="search.Search" name="I would like to search for a topic" status="failed" time="9.514099"><failure message="&#10;Expected: a string containing 'python testing with behave'&#10;     but: was 'Интер..." type="AssertionError">
 <![CDATA[
-Failing step: When I search for "python testing with behave" ... failed in 0.000s
-Location: src/features/search.feature:9
-Traceback (most recent call last):
-  File "/home/mvoitko/.virtualenvs/Habrahabr-tests/lib/python3.5/site-packages/behave/model.py", line 1456, in run
-    match.run(runner.context)
-  File "/home/mvoitko/.virtualenvs/Habrahabr-tests/lib/python3.5/site-packages/behave/model.py", line 1903, in run
-    self.func(context, *args, **kwargs)
-  File "src/features/steps/user_steps.py", line 45, in step_impl
-    page.search(context.querry)
-NameError: name 'page' is not defined
+Failing step: Then I should be on the results page ... failed in 0.009s
+Location: src/features/search.feature:10
+Assertion Failed: 
+Expected: a string containing 'python testing with behave'
+     but: was 'Интересные публикации / Хабрахабр'
+
+Captured stdout:
+('id', 'search-form-btn')
+('id', 'search-form-field')
+('id', 'search-form-field')
 ]]>
-</error><system-out>
+</failure><system-out>
 <![CDATA[
 @scenario.begin
   Scenario: I would like to search for a topic
-    Given I am on the home page ... passed in 4.042s
-    When I search for "python testing with behave" ... failed in 0.000s
-    Then I should be on the results page ... skipped in 0.000s
+    Given I am on the home page ... passed in 8.997s
+    When I search for "python testing with behave" ... passed in 0.508s
+    Then I should be on the results page ... failed in 0.009s
 
 @scenario.end
 --------------------------------------------------------------------------------
+
+Captured stdout:
+('id', 'search-form-btn')
+('id', 'search-form-field')
+('id', 'search-form-field')
+
 ]]>
 </system-out></testcase></testsuite>

@@ -3,6 +3,9 @@ Feature: Login
 	"""
 	DEPRACATED since need to handle Google captcha on web app environment config level
 	"""
+	As user
+    I want to have possibilty to log in to my account
+
 	Scenario Outline: Login with correct credentials
 	    Given I have an account for "<email>"
 	    When I log in

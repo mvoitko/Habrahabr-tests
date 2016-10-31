@@ -24,10 +24,10 @@ class BasePage:
         """
         :type driver: selenium.webdriver.*
         """
-        self.url = base_url + url
         self.driver = driver
-        self.timeout = 15
+        self.url = base_url + url
         self.locators_dictionary = locators_dictionary
+        self.timeout = 15
 
     def open(self):
         """

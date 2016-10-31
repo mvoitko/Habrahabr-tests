@@ -6,6 +6,7 @@ Created on Oct 29, 2016
 from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.support import expected_conditions as EC
 
 from src.pages.basePage import BasePage
 from src.pages.mainPage import MainPage
@@ -29,7 +30,7 @@ class LoginPage(BasePage):
     def check_capthca(self):
         try:
             self.driver.switch_to_frame('undefined')
-            element = self.driver.find_element_by_id('recaptcha-anchor')
+            element = WebdriverWait(self.driver, self.timeout).until(EC.visibility_of_element_located((By.ID, 'recaptcha-anchor')))
             action = ActionChains(self.driver).move_to_element(element)
             action.perform()
             self.driver.switch_to_default_content()
@@ -46,4 +47,4 @@ class LoginPage(BasePage):
         self.fill('password field', password)
         self.check_capthca()
         self.click_on('login button')
-        return MainPage(self.driver)
+        return MainPage(self.context.driver)

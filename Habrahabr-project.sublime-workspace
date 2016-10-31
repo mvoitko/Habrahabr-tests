@@ -4,12 +4,68 @@
 		"selected_items":
 		[
 			[
-				"loca",
+				"visibility_",
+				"visibility_of_element_located\tclass"
+			],
+			[
+				"file",
+				"file_content"
+			],
+			[
+				"qu",
+				"querry"
+			],
+			[
+				"page",
+				"page_title\tstatement"
+			],
+			[
+				"asse",
+				"assert_that"
+			],
+			[
+				"m",
+				"move_to_element\tfunction"
+			],
+			[
+				"lo",
 				"locators_dict\tstatement"
+			],
+			[
+				"che",
+				"check_capthca\tfunction"
+			],
+			[
+				"Main",
+				"MainPage\tclass"
+			],
+			[
+				"pa",
+				"pages\tmodule"
+			],
+			[
+				"elem",
+				"element_locator\tstatement"
 			],
 			[
 				"loc",
 				"locators"
+			],
+			[
+				"l",
+				"loginLocators\tmodule"
+			],
+			[
+				"locat",
+				"locators"
+			],
+			[
+				"loca",
+				"locators_dictionary\tstatement"
+			],
+			[
+				"locators",
+				"locators_dictionary"
 			],
 			[
 				"Login",
@@ -22,10 +78,6 @@
 			[
 				"C",
 				"CLASS_NAME\tstatement"
-			],
-			[
-				"file",
-				"file_content\tstatement"
 			],
 			[
 				"base",
@@ -80,14 +132,6 @@
 				"Exception\tclass"
 			],
 			[
-				"elem",
-				"element_name\tparam"
-			],
-			[
-				"page",
-				"page_name"
-			],
-			[
 				"__",
 				"__init__"
 			],
@@ -132,20 +176,28 @@
 	"buffers":
 	[
 		{
-			"file": "src/locators/loginLocators.py",
+			"file": "src/pages/basePage.py",
 			"settings":
 			{
-				"buffer_size": 389,
+				"buffer_size": 3172,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "src/locators/mainLocators.py",
+			"file": "src/pages/mainPage.py",
 			"settings":
 			{
-				"buffer_size": 555,
+				"buffer_size": 762,
 				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/features/search.feature",
+			"settings":
+			{
+				"buffer_size": 268,
 				"line_ending": "Unix"
 			}
 		}
@@ -216,7 +268,6 @@
 	"expanded_folders":
 	[
 		"/home/mvoitko/Documents/projects/Habrahabr_tests",
-		"/home/mvoitko/Documents/projects/Habrahabr_tests/reports",
 		"/home/mvoitko/Documents/projects/Habrahabr_tests/resources",
 		"/home/mvoitko/Documents/projects/Habrahabr_tests/src",
 		"/home/mvoitko/Documents/projects/Habrahabr_tests/src/features",
@@ -227,28 +278,32 @@
 	],
 	"file_history":
 	[
-		"/home/mvoitko/.config/sublime-text-3/Packages/Python PEP8 Autoformat/Default (Linux).sublime-keymap",
+		"/home/mvoitko/Documents/projects/Habrahabr_tests/src/features/login.feature",
+		"/home/mvoitko/Documents/projects/Habrahabr_tests/src/pages/loginPage.py",
+		"/home/mvoitko/Documents/projects/Habrahabr_tests/src/features/logout.feature",
 		"/home/mvoitko/Documents/projects/Habrahabr_tests/src/features/environment.py",
 		"/home/mvoitko/Documents/projects/Habrahabr_tests/src/config.py",
+		"/home/mvoitko/Documents/projects/Habrahabr_tests/src/features/steps/user_steps.py",
+		"/home/mvoitko/Documents/projects/Habrahabr_tests/src/pages/mainPage.py",
+		"/home/mvoitko/Documents/projects/Habrahabr_tests/src/utils/helper.py",
+		"/home/mvoitko/Documents/projects/Habrahabr_tests/src/pages/basePage.py",
+		"/home/mvoitko/Documents/projects/Habrahabr_tests/src/features/search.feature",
 		"/home/mvoitko/Documents/projects/Habrahabr_tests/src/locators/mainLocators.py",
+		"/home/mvoitko/Documents/projects/Habrahabr_tests/src/features/steps/__init__.py",
+		"/home/mvoitko/Documents/projects/Habrahabr_tests/README.md",
+		"/home/mvoitko/Documents/projects/Habrahabr_tests/.gitignore",
+		"/home/mvoitko/Documents/projects/Habrahabr_tests/resources/user_data.csv",
+		"/home/mvoitko/Documents/projects/Habrahabr_tests/src/locators/loginLocators.py",
+		"/home/mvoitko/.config/sublime-text-3/Packages/Python PEP8 Autoformat/pep8_autoformat.sublime-settings",
+		"/home/mvoitko/.config/sublime-text-3/Packages/Anaconda/Anaconda.sublime-settings",
+		"/home/mvoitko/Documents/projects/Habrahabr_tests/test.log",
+		"/home/mvoitko/.config/sublime-text-3/Packages/Python PEP8 Autoformat/Default (Linux).sublime-keymap",
 		"/home/mvoitko/.config/sublime-text-3/Packages/DocBlockr_Python/DocblockrPython.sublime-settings",
 		"/home/mvoitko/.config/sublime-text-3/Packages/DocBlockr/Base File.sublime-settings",
 		"/home/mvoitko/.config/sublime-text-3/Packages/DocPy/DocPy.sublime-settings",
 		"/home/mvoitko/.config/sublime-text-3/Packages/User/DocblockrPython.sublime-settings",
-		"/home/mvoitko/Documents/projects/Habrahabr_tests/src/features/steps/user_steps.py",
-		"/home/mvoitko/Documents/projects/Habrahabr_tests/src/pages/basePage.py",
-		"/home/mvoitko/Documents/projects/Habrahabr_tests/src/locators/loginLocators.py",
-		"/home/mvoitko/Documents/projects/Habrahabr_tests/src/pages/loginPage.py",
-		"/home/mvoitko/Documents/projects/Habrahabr_tests/src/pages/mainPage.py",
-		"/home/mvoitko/Documents/projects/Habrahabr_tests/src/utils/helper.py",
-		"/home/mvoitko/Documents/projects/Habrahabr_tests/src/features/login.feature",
-		"/home/mvoitko/Documents/projects/Habrahabr_tests/.gitignore",
-		"/home/mvoitko/Documents/projects/Habrahabr_tests/README.md",
 		"/home/mvoitko/Documents/projects/Habrahabr_tests/resources/users.csv",
-		"/home/mvoitko/Documents/projects/Habrahabr_tests/src/features/logout.feature",
-		"/home/mvoitko/Documents/projects/Habrahabr_tests/src/features/search.feature",
 		"/home/mvoitko/Documents/projects/Habrahabr_tests/Habrahabr-project.sublime-project",
-		"/home/mvoitko/Documents/projects/Habrahabr_tests/test.log",
 		"/home/mvoitko/Documents/projects/Habrahabr_tests/behave.ini",
 		"/home/mvoitko/Documents/projects/Habrahabr_tests/src/utils/__init__.py",
 		"/home/mvoitko/Documents/projects/Habrahabr_tests/src/utils/сруслук",
@@ -263,7 +318,6 @@
 		"/home/mvoitko/Documents/projects/Habrahabr-tests/src/pages/mainPage.py",
 		"/home/mvoitko/Documents/projects/Habrahabr-tests/Habrahabr-project.sublime-project",
 		"/home/mvoitko/Documents/projects/Habrahabr-tests/src/pages/login_page.py",
-		"/home/mvoitko/.config/sublime-text-3/Packages/Anaconda/Anaconda.sublime-settings",
 		"/home/mvoitko/.local/lib/python3.5/site-packages/selenium/webdriver/common/action_chains.py",
 		"/home/mvoitko/.local/lib/python3.5/site-packages/selenium/webdriver/__init__.py",
 		"/home/mvoitko/projects/pocket/locators/LoginPageLocators.py",
@@ -309,13 +363,14 @@
 	],
 	"find":
 	{
-		"height": 23.0
+		"height": 34.0
 	},
 	"find_in_files":
 	{
-		"height": 0.0,
+		"height": 90.0,
 		"where_history":
 		[
+			""
 		]
 	},
 	"find_state":
@@ -323,6 +378,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"file_content",
+			"credentials",
+			"from src.pages.mainPage import MainPage",
 			"interpreter"
 		],
 		"highlight": true,
@@ -341,24 +399,54 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "src/locators/loginLocators.py",
+					"file": "src/pages/basePage.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 389,
+						"buffer_size": 3172,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								269,
-								269
+								520,
+								520
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 709.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "src/pages/mainPage.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 762,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								761,
+								761
 							]
 						],
 						"settings":
@@ -375,33 +463,31 @@
 					"type": "text"
 				},
 				{
-					"buffer": 1,
-					"file": "src/locators/mainLocators.py",
-					"semi_transient": false,
+					"buffer": 2,
+					"file": "src/features/search.feature",
+					"semi_transient": true,
 					"settings":
 					{
-						"buffer_size": 555,
+						"buffer_size": 268,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								555,
-								555
+								0,
+								0
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Python/Python.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/Gherkin Auto-Complete Plus/Cucumber Plain Text Feature.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 2,
 					"type": "text"
 				}
 			]
@@ -409,7 +495,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 23.0
+		"height": 26.0
 	},
 	"input":
 	{
@@ -450,7 +536,7 @@
 	"project": "Habrahabr-project.sublime-project",
 	"replace":
 	{
-		"height": 42.0
+		"height": 48.0
 	},
 	"save_all_on_build": true,
 	"select_file":

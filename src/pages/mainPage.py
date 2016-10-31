@@ -16,12 +16,14 @@ class MainPage(BasePage):
     Contains all actions related to UI interaction.
     """
 
-    def __init__(self, context):
-        BasePage.__init__(self, context.driver, url='interesting', locators_dictionary=MainLocators.locators_dictionary)
+    def __init__(self, driver):
+        BasePage.__init__(self, driver, url='interesting', locators_dictionary=MainLocators.locators_dictionary)
 
     def search(self, querry):
         """
         Search given querry.
         """
         self.click_on('search button')
-        self.fill('search field', querry).send_keys(Keys.ENTER)
+        self.fill('search field', querry)
+        self.find('search field').send_keys(Keys.ENTER)
+        return MainPage(self.driver)

@@ -3,6 +3,9 @@ Created on Oct 28, 2016
 
 @author: mvoitko
 """
-resource_dir = "resources"
+import os
+
+
 base_url = 'http://habrahabr.ru/'
-path_to_users = 'resources/user_data.csv'
+resource_dir = 'resources'
+path_to_users = os.path.join(resource_dir, 'user_data.csv')

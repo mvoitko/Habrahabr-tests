@@ -15,20 +15,22 @@ logging.basicConfig(filename="test.log", level=logging.DEBUG)
 __logger__ = logging.getLogger("test")
 
 #@capture
+
+
 def before_all(context):
     __logger__.info("BEFORE ALL")
-    __logger__.info(">"*20)
+    __logger__.info(">" * 20)
     context.driver = webdriver.Firefox()
     context.driver.maximize_window()
-    context.file_content = read_file()
-    context.credentials = form_dict_from_file()
-    context.usernames = form_dict_from_file(0, 2)
+    context.file_content = helper.read_file()
+    context.credentials = helper.form_dict_from_file(context.file_content)
+    context.usernames = helper.form_dict_from_file(context.file_content, 0, 2)
 
 #@capture
 def after_all(context):
-    __logger__.info("<"*20)
+    __logger__.info("<" * 20)
     __logger__.info("AFTER FEATURE")
-    # context.driver.quit()
+    context.driver.quit()
 
 # #@capture
 # def before_feature(context, feature):
