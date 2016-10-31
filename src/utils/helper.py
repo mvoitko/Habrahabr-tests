@@ -29,7 +29,7 @@ def whether_in_file(email, rows=file_content):
     """
     is_in_file = False
     for row in rows:
-        if email == row[0]:
+        if email.lower() == row[0].lower():
             is_in_file = True
             break
     return is_in_file
