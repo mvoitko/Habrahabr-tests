@@ -5,10 +5,10 @@ Created on Oct 30, 2016
 """
 import csv
 
-from src.config import *
+from src import config
 
 
-def read_file(path=path_to_users, delimeter=','):
+def read_file(path=config.path_to_users, delimeter=','):
     """
     Check if email is in CSV file.
     :type list: [row0, row1, ...]
