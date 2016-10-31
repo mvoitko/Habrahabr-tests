@@ -15,19 +15,20 @@ from src.locators.loginLocators import LoginLocators
 
 class LoginPage(BasePage):
     """
-    Login page representation.
-    Contains all actions related to UI interaction.
+    Login Habrahabr page representation.
+    Class for UI actions related to this page
     """
 
-    def __init__(self, context):
-        BasePage.__init__(self, context.driver, url='login',
-                          locators_dictionary=LoginLocators.locators_dict)
+    locators_dictionary = LoginLocators.locators_dictionary
 
     # def switch_to_iframe(self):
     #     frame = self.find('iframe')
     #     self.driver.switch_to_frame(frame)
 
     def check_capthca(self):
+        """
+        Handle Google Captcha
+        """
         try:
             self.driver.switch_to_frame('undefined')
             element = WebdriverWait(self.driver, self.timeout).until(EC.visibility_of_element_located((By.ID, 'recaptcha-anchor')))
@@ -41,7 +42,9 @@ class LoginPage(BasePage):
     def login(self, email, password):
         """
         Login with given credentials.
-        :type webdriver:
+        :param email: str - user email
+        :param password: str - user password
+        :return: element: selenium.webdriver.remote.webelement.WebElement
         """
         self.fill('email field', email)
         self.fill('password field', password)

@@ -13,7 +13,7 @@ class LoginLocators:
     :type dict:
     """
 
-    locators_dict = {
+    locators_dictionary = {
         "EMAIL_FIELD": (By.ID, 'email_field'),
         "PASSWORD_FIELD": (By.NAME, 'password'),
         "LOGIN_BUTTON": (By.NAME, 'go'),

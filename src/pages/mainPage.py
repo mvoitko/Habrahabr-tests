@@ -12,16 +12,18 @@ from src.locators.mainLocators import MainLocators
 
 class MainPage(BasePage):
     """
-    Main page representation.
-    Contains all actions related to UI interaction.
+    Main Habrahabr page representation.
+    Class for UI actions related to this page
     """
 
-    def __init__(self, driver):
-        BasePage.__init__(self, driver, url='interesting', locators_dictionary=MainLocators.locators_dictionary)
+    url = 'interesting'
+    locators_dictionary = MainLocators.locators_dictionary
 
     def search(self, querry):
         """
         Search given querry.
+        :param querry: str - text to search
+        :return: element: selenium.webdriver.remote.webelement.WebElement
         """
         self.click_on('search button')
         self.fill('search field', querry)

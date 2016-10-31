@@ -20,55 +20,60 @@ class BasePage:
     All pages may be inherited from this class.
     """
 
-    def __init__(self, driver, url=base_url, locators_dictionary=None):
+    def __init__(self, driver, url=base_url):
         """
         :type driver: selenium.webdriver.*
         """
         self.driver = driver
         self.url = base_url + url
-        self.locators_dictionary = locators_dictionary
         self.timeout = 15
 
     def open(self):
         """
         Open page url.
-        :type element: selenium.webdriver.remote.webelement.WebElement
+        :type url: str - URL to open
+        :return: element: selenium.webdriver.remote.webelement.WebElement
         """
         self.driver.get(self.url)
 
-    def _find_elem_by_key(self, key):
+    def _find_elem_by_key(cls, key):
         """
         Find respective locator for the element in locators dictionary.
-        :type tuple: (strategy, value)
+        :param key: str - web element key
+        :return: tuple of (strategy, value)
         """
         key = key.upper().replace(" ", "_")
-        if key in self.locators_dictionary:
-            element_locator = self.locators_dictionary[key]
+        if key in cls.locators_dictionary:
+            element_locator = cls.locators_dictionary[key]
             return element_locator
         else:
             raise AttributeError(
-                "Cannot find {0} locator on the {1} page".format(key, str(self)))
+                "Cannot find {0} locator on the {1} page".format(key, str(cls)))
 
-    def find(self, key):
+    def find(cls, key):
         """
         Find element with specified locator.
-        :type element: selenium.webdriver.remote.webelement.WebElement
+        :param key: str - web element key
+        :return: element: selenium.webdriver.remote.webelement.WebElement
         """
-        locator = self._find_elem_by_key(key)
-        print(locator)
-        WebDriverWait(self.driver, self.timeout).until(EC.presence_of_element_located(locator))
-        return self.driver.find_element(*locator)
+        locator = cls._find_elem_by_key(key)
+        WebDriverWait(cls.driver, cls.timeout).until(
+            EC.presence_of_element_located(locator))
+        return cls.driver.find_element(*locator)
 
     def click_on(self, key):
         """
-        Click on element with specified locator.
+        Click on web element with specified key.
+        :type key: str - web element key
         """
         element = self.find(key)
         element.click()
 
     def fill(self, key, value):
         """
-        Fill element with specified value.
+        Fill value in web element with key
+        :type key: str - web element key
+        :type value: str - value to fill in
         """
         element = self.find(key)
         element.clear()
@@ -76,35 +81,16 @@ class BasePage:
 
     def get_text(self, key):
         """
-        Get element text.
-        :type str:
+        Get text of web element with specified key
+        :param key: str - web element key
+        :return text: str - element text
         """
         element = self.find(key)
         return element.text
 
     def get_page_title(self):
         """
-        Get page title.
-        :type str:
+        Get text of web element with specified key
+        :return title: str - web page title
         """
         return self.driver.title
-
-    def get_current_url(self):
-        """
-        Get page title.
-        :type str:
-        """
-        return self.driver.current_url
-
-    def _highlight(self, element):
-        """
-        Highlight given web element with red border using JS execution.
-        WARNING: Contains time.sleep in 1 sec between scrolling to element and highlighting
-        :type element: selenium.webdriver.remote.webelement.WebElement
-        """
-        self.execute_script(element, 'scrollIntoView(true);')
-        sleep(1)
-        self.execute_script(
-            element, 'setAttribute("style", "color: red; border: 5px solid red;");')
-        sleep(1)
-        self.execute_script(element, 'setAttribute("style", "");')

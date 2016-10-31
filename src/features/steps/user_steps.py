@@ -15,8 +15,8 @@ from src.utils.helper import *
 
 @given(u'I have an account for "{email}"')
 def step_impl(context, email):
-    context.email = email
     assert_that(whether_in_file(email, context.file_content) is True)
+    context.email = email
 
 
 @when(u'I log in')

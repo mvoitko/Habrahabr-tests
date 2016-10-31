@@ -1,31 +1,27 @@
-<testsuite errors="0" failures="1" name="search.Search" skipped="0" tests="1" time="9.514099"><testcase classname="search.Search" name="I would like to search for a topic" status="failed" time="9.514099"><failure message="&#10;Expected: a string containing 'python testing with behave'&#10;     but: was 'Интер..." type="AssertionError">
+<testsuite errors="1" failures="0" name="search.Search" skipped="0" tests="1" time="0.00044"><testcase classname="search.Search" name="I would like to search for a topic" status="failed" time="0.00044"><error message="name 'cls' is not defined" type="NameError">
 <![CDATA[
-Failing step: Then I should be on the results page ... failed in 0.009s
-Location: src/features/search.feature:10
-Assertion Failed: 
-Expected: a string containing 'python testing with behave'
-     but: was 'Интересные публикации / Хабрахабр'
-
-Captured stdout:
-('id', 'search-form-btn')
-('id', 'search-form-field')
-('id', 'search-form-field')
+Failing step: Given I am on the home page ... failed in 0.000s
+Location: src/features/search.feature:8
+Traceback (most recent call last):
+  File "/home/mvoitko/.virtualenvs/Habrahabr-tests/lib/python3.5/site-packages/behave/model.py", line 1456, in run
+    match.run(runner.context)
+  File "/home/mvoitko/.virtualenvs/Habrahabr-tests/lib/python3.5/site-packages/behave/model.py", line 1903, in run
+    self.func(context, *args, **kwargs)
+  File "src/features/steps/user_steps.py", line 37, in step_impl
+    page = MainPage(context.driver)
+  File "/home/mvoitko/Documents/projects/Habrahabr_tests/src/pages/basePage.py", line 28, in __init__
+    self.url = base_url + cls.url
+NameError: name 'cls' is not defined
 ]]>
-</failure><system-out>
+</error><system-out>
 <![CDATA[
 @scenario.begin
   Scenario: I would like to search for a topic
-    Given I am on the home page ... passed in 8.997s
-    When I search for "python testing with behave" ... passed in 0.508s
-    Then I should be on the results page ... failed in 0.009s
+    Given I am on the home page ... failed in 0.000s
+    When I search for "python testing with behave" ... skipped in 0.000s
+    Then I should be on the results page ... skipped in 0.000s
 
 @scenario.end
 --------------------------------------------------------------------------------
-
-Captured stdout:
-('id', 'search-form-btn')
-('id', 'search-form-field')
-('id', 'search-form-field')
-
 ]]>
 </system-out></testcase></testsuite>
