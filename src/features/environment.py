@@ -23,7 +23,7 @@ def before_all(context):
 def after_all(context):
     __logger__.info("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<")
     __logger__.info("AFTER FEATURE")
-    context.driver.quit()
+    # context.driver.quit()
 
 # #@capture
 # def before_feature(context, feature):

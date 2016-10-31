@@ -1,9 +1,8 @@
-@wip
-@smoke
+@skip
 Feature: Login
-	As user
-	I want to have possibilty to access to my account with valid credentials
-
+	"""
+	DEPRACATED since need to handle Google captcha on web app environment config level
+	"""
 	Scenario Outline: Login with correct credentials
 	    Given I have an account for "<email>"
 	    When I log in
@@ -11,7 +10,6 @@ Feature: Login
 
 	    Examples:
 		    | email                    |
-		    | max.voitko@gmail.com     |
-		    # | habrtest@mailinator.com  |
-		    # | habr_test@mailinator.com |
-		    # | 044244244@mailinator.com |
+		    | habrtest@mailinator.com  |
+		    | habr_test@mailinator.com |
+		    | 044244244@mailinator.com |

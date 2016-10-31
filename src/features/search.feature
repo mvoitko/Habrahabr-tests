@@ -1,3 +1,4 @@
+@wip
 @smoke
 Feature: Search
     As user
@@ -7,4 +8,3 @@ Feature: Search
     Given I am on the home page
     When I search for "python testing with behave"
     Then I should be on the results page
-    And the first search result should be visible

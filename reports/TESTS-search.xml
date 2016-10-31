@@ -1,11 +1,16 @@
-<testsuite errors="0" failures="0" name="search.Search" skipped="1" tests="1" time="0.0"><testcase classname="search.Search" name="I would like to search for a topic" status="skipped" time="0"><skipped /><system-out>
+<testsuite errors="0" failures="1" name="search.Search" skipped="0" tests="1" time="0.0"><testcase classname="search.Search" name="I would like to search for a topic" status="failed" time="0"><failure message="None" type="NoneType">
+<![CDATA[
+Failing step: Given I am on the home page ... undefined in 0.000s
+Location: src/features/search.feature:8
+None]]>
+</failure><system-out>
 <![CDATA[
 @scenario.begin
   Scenario: I would like to search for a topic
-    Given I am on the home page ... skipped in 0.000s
-    When I search for "python testing with behave" ... skipped in 0.000s
-    Then I should be on the results page ... skipped in 0.000s
-    And the first search result should be visible ... skipped in 0.000s
+    Given I am on the home page ... undefined in 0.000s
+    When I search for "python testing with behave" ... undefined in 0.000s
+    Then I should be on the results page ... undefined in 0.000s
+    And the first search result should be visible ... undefined in 0.000s
 
 @scenario.end
 --------------------------------------------------------------------------------

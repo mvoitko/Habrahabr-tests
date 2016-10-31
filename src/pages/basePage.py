@@ -82,6 +82,20 @@ class BasePage:
         element = self.find(key)
         return element.text
 
+    def get_page_title(self):
+        """
+        Get page title.
+        :type str:
+        """
+        return self.driver.title
+
+    def get_current_url(self):
+        """
+        Get page title.
+        :type str:
+        """
+        return self.driver.current_url
+
     def _highlight(self, element):
         """
         Highlight given web element with red border using JS execution.

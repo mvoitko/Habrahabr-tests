@@ -215,3 +215,73 @@ INFO:test:BEFORE ALL
 INFO:test:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 INFO:test:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 INFO:test:AFTER FEATURE
+DEBUG:parse:format 'I have an account for "{email}"' -> 'I have an account for "(?P<email>.+?)"'
+DEBUG:parse:format 'I log in' -> 'I log in'
+DEBUG:parse:format 'I should see personalized page' -> 'I should see personalized page'
+INFO:test:BEFORE ALL
+INFO:test:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+INFO:test:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+INFO:test:AFTER FEATURE
+DEBUG:parse:format 'I have an account for "{email}"' -> 'I have an account for "(?P<email>.+?)"'
+DEBUG:parse:format 'I log in' -> 'I log in'
+DEBUG:parse:format 'I should see personalized page' -> 'I should see personalized page'
+INFO:test:BEFORE ALL
+INFO:test:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+INFO:test:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+INFO:test:AFTER FEATURE
+DEBUG:parse:format 'I have an account for "{email}"' -> 'I have an account for "(?P<email>.+?)"'
+DEBUG:parse:format 'I log in' -> 'I log in'
+DEBUG:parse:format 'I should see personalized page' -> 'I should see personalized page'
+INFO:test:BEFORE ALL
+INFO:test:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+INFO:test:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+INFO:test:AFTER FEATURE
+DEBUG:parse:format 'I have an account for "{email}"' -> 'I have an account for "(?P<email>.+?)"'
+DEBUG:parse:format 'I log in' -> 'I log in'
+DEBUG:parse:format 'I should see personalized page' -> 'I should see personalized page'
+INFO:test:BEFORE ALL
+INFO:test:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+INFO:test:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+INFO:test:AFTER FEATURE
+DEBUG:parse:format 'I have an account for "{email}"' -> 'I have an account for "(?P<email>.+?)"'
+DEBUG:parse:format 'I log in' -> 'I log in'
+DEBUG:parse:format 'I should see personalized page' -> 'I should see personalized page'
+INFO:test:BEFORE ALL
+INFO:test:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+INFO:test:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+INFO:test:AFTER FEATURE
+DEBUG:parse:format 'I have an account for "{email}"' -> 'I have an account for "(?P<email>.+?)"'
+DEBUG:parse:format 'I log in' -> 'I log in'
+DEBUG:parse:format 'I should see personalized page' -> 'I should see personalized page'
+INFO:test:BEFORE ALL
+INFO:test:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+INFO:test:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+INFO:test:AFTER FEATURE
+DEBUG:parse:format 'I have an account for "{email}"' -> 'I have an account for "(?P<email>.+?)"'
+DEBUG:parse:format 'I log in' -> 'I log in'
+DEBUG:parse:format 'I should see personalized page' -> 'I should see personalized page'
+INFO:test:BEFORE ALL
+INFO:test:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+INFO:test:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+INFO:test:AFTER FEATURE
+DEBUG:parse:format 'I have an account for "{email}"' -> 'I have an account for "(?P<email>.+?)"'
+DEBUG:parse:format 'I log in' -> 'I log in'
+DEBUG:parse:format 'I should see personalized page' -> 'I should see personalized page'
+INFO:test:BEFORE ALL
+INFO:test:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+INFO:test:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+INFO:test:AFTER FEATURE
+DEBUG:parse:format 'I have an account for "{email}"' -> 'I have an account for "(?P<email>.+?)"'
+DEBUG:parse:format 'I log in' -> 'I log in'
+DEBUG:parse:format 'I should see personalized page' -> 'I should see personalized page'
+INFO:test:BEFORE ALL
+INFO:test:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+INFO:test:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+INFO:test:AFTER FEATURE
+DEBUG:parse:format 'I have an account for "{email}"' -> 'I have an account for "(?P<email>.+?)"'
+DEBUG:parse:format 'I log in' -> 'I log in'
+DEBUG:parse:format 'I should see personalized page' -> 'I should see personalized page'
+INFO:test:BEFORE ALL
+INFO:test:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+INFO:test:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+INFO:test:AFTER FEATURE

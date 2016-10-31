@@ -1,4 +1,4 @@
-@smoke
+@skip
 Feature: Logout
     As user
     I want to have possibilty to log out of my account
