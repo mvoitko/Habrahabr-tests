@@ -1260,3 +1260,16 @@ INFO:test:BEFORE ALL
 INFO:test:>>>>>>>>>>>>>>>>>>>>
 INFO:test:<<<<<<<<<<<<<<<<<<<<
 INFO:test:AFTER FEATURE
+DEBUG:parse:format 'I have an account for "{email}"' -> 'I have an account for "(?P<email>.+?)"'
+DEBUG:parse:format 'I log in' -> 'I log in'
+DEBUG:parse:format 'I should see personalized page' -> 'I should see personalized page'
+DEBUG:parse:format 'I am on the home page' -> 'I am on the home page'
+DEBUG:parse:format 'I search for "{querry}"' -> 'I search for "(?P<querry>.+?)"'
+DEBUG:parse:format 'I see first result in the list' -> 'I see first result in the list'
+DEBUG:parse:format 'I see search results for "{querry}"' -> 'I see search results for "(?P<querry>.+?)"'
+DEBUG:parse:format 'I apply sorting by "{sorting_param}"' -> 'I apply sorting by "(?P<sorting_param>.+?)"'
+DEBUG:parse:format 'I see sorted search results' -> 'I see sorted search results'
+INFO:test:BEFORE ALL
+INFO:test:>>>>>>>>>>>>>>>>>>>>
+INFO:test:<<<<<<<<<<<<<<<<<<<<
+INFO:test:AFTER FEATURE

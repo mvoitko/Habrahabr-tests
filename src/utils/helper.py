@@ -55,19 +55,9 @@ def form_dict_from_file(rows, key_column=0, value_column=1):
     return user_dictionary
 
 
-def capitilize(word):
-    """
-    Capitilize credentials from CSV file to dictionary.
-    :param date_string: str - str with post timestamp
-    :return : str - converted string for parsing
-    """
-    if not word[0].is_digit():
-        return word[0].upper() + word[1:]
-
-
 def convert_date_string_for_parsing(date_string):
     """
-    Cobvert date string in format .
+    Convert date string in format .
     :param date_string: str - str with post timestamp
     :return : str - converted string for parsing
     """
@@ -92,7 +82,7 @@ def convert_date_string_for_parsing(date_string):
             date_string_list.insert(2, str(datetime.today().year))
 
     if date_string_list[0] == 1:  # handling 1 digit day case
-        date_string_list[0] += '0'
+        date_string_list[0] = '0' + date_string_list[0]
 
     date_string_list[1] = date_string_list[1][:3]
     print(' '.join(date_string_list))

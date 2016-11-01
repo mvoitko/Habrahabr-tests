@@ -1,4 +1,4 @@
-<testsuite errors="1" failures="0" name="search.Search" skipped="2" tests="3" time="55.920379"><testcase classname="search.Search" name="I would like to search for a topic" status="skipped" time="0"><skipped /><system-out>
+<testsuite errors="0" failures="1" name="search.Search" skipped="2" tests="3" time="10.259451"><testcase classname="search.Search" name="I would like to search for a topic" status="skipped" time="0"><skipped /><system-out>
 <![CDATA[
 @scenario.begin
   Scenario: I would like to search for a topic
@@ -9,29 +9,13 @@
 @scenario.end
 --------------------------------------------------------------------------------
 ]]>
-</system-out></testcase><testcase classname="search.Search" name="I would like to sort search results by timing" status="failed" time="55.920379"><error message="Message: The element reference is stale. Either the element is no longer attache..." type="StaleElementReferenceException">
+</system-out></testcase><testcase classname="search.Search" name="I would like to sort search results by timing" status="failed" time="10.259451"><failure message="&#10;Expected: &lt;[datetime.datetime(2016, 4, 19, 6, 12), datetime.datetime(2015, 10, ..." type="AssertionError">
 <![CDATA[
-Failing step: Then I see sorted search results ... failed in 0.816s
+Failing step: Then I see sorted search results ... failed in 0.148s
 Location: src/features/search.feature:14
-Traceback (most recent call last):
-  File "/home/mvoitko/.virtualenvs/Habrahabr-tests/lib/python3.5/site-packages/behave/model.py", line 1456, in run
-    match.run(runner.context)
-  File "/home/mvoitko/.virtualenvs/Habrahabr-tests/lib/python3.5/site-packages/behave/model.py", line 1903, in run
-    self.func(context, *args, **kwargs)
-  File "src/features/steps/user_steps.py", line 73, in step_impl
-    posts_timestamps = page.get_posts_timestamps()
-  File "/home/mvoitko/Documents/projects/Habrahabr_tests/src/pages/mainPage.py", line 71, in get_posts_timestamps
-    date_object = helper.parse_date(timestamp.text)
-  File "/home/mvoitko/.virtualenvs/Habrahabr-tests/lib/python3.5/site-packages/selenium/webdriver/remote/webelement.py", line 73, in text
-    return self._execute(Command.GET_ELEMENT_TEXT)['value']
-  File "/home/mvoitko/.virtualenvs/Habrahabr-tests/lib/python3.5/site-packages/selenium/webdriver/remote/webelement.py", line 494, in _execute
-    return self._parent.execute(command, params)
-  File "/home/mvoitko/.virtualenvs/Habrahabr-tests/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 236, in execute
-    self.error_handler.check_response(response)
-  File "/home/mvoitko/.virtualenvs/Habrahabr-tests/lib/python3.5/site-packages/selenium/webdriver/remote/errorhandler.py", line 192, in check_response
-    raise exception_class(message, screen, stacktrace)
-selenium.common.exceptions.StaleElementReferenceException: Message: The element reference is stale. Either the element is no longer attached to the DOM or the page has been refreshed.
-
+Assertion Failed: 
+Expected: <[datetime.datetime(2016, 4, 19, 6, 12), datetime.datetime(2015, 10, 15, 10, 51), datetime.datetime(2015, 7, 17, 19, 21), datetime.datetime(2014, 4, 18, 12, 42), datetime.datetime(2012, 11, 30, 22, 18), datetime.datetime(2011, 10, 27, 16, 25), datetime.datetime(2011, 8, 9, 15, 54), datetime.datetime(2011, 7, 9, 9, 0), datetime.datetime(2010, 11, 3, 1, 15), datetime.datetime(2007, 5, 18, 14, 25)]>
+     but: was <[datetime.datetime(2015, 7, 17, 19, 21), datetime.datetime(2014, 4, 18, 12, 42), datetime.datetime(2012, 11, 30, 22, 18), datetime.datetime(2015, 10, 15, 10, 51), datetime.datetime(2016, 4, 19, 6, 12), datetime.datetime(2007, 5, 18, 14, 25), datetime.datetime(2010, 11, 3, 1, 15), datetime.datetime(2011, 7, 9, 9, 0), datetime.datetime(2011, 8, 9, 15, 54), datetime.datetime(2011, 10, 27, 16, 25)]>
 
 Captured stdout:
 17 июл 2015 19:21
@@ -43,16 +27,17 @@ Captured stdout:
 3 ноя 2010 01:15
 9 июл 2011 09:00
 9 авг 2011 15:54
+27 окт 2011 16:25
 ]]>
-</error><system-out>
+</failure><system-out>
 <![CDATA[
 @scenario.begin
 
   @wip
   Scenario: I would like to sort search results by timing
-    Given I see search results for "behave" ... passed in 53.537s
-    When I apply sorting by "time" ... passed in 1.567s
-    Then I see sorted search results ... failed in 0.816s
+    Given I see search results for "behave" ... passed in 8.151s
+    When I apply sorting by "time" ... passed in 1.961s
+    Then I see sorted search results ... failed in 0.148s
 
 @scenario.end
 --------------------------------------------------------------------------------
@@ -67,6 +52,7 @@ Captured stdout:
 3 ноя 2010 01:15
 9 июл 2011 09:00
 9 авг 2011 15:54
+27 окт 2011 16:25
 
 ]]>
 </system-out></testcase><testcase classname="search.Search" name="I would like to see respective message when no results found" status="skipped" time="0"><skipped /><system-out>
