@@ -61,7 +61,8 @@ def capitilize(word):
     :param date_string: str - str with post timestamp
     :return : str - converted string for parsing
     """
-    return word[0].upper() + word[1:]
+    if not word[0].is_digit():
+        return word[0].upper() + word[1:]
 
 
 def convert_date_string_for_parsing(date_string):
@@ -72,22 +73,21 @@ def convert_date_string_for_parsing(date_string):
     """
     date_string_list = date_string.split(' ')
     date_string_list.remove(u'в')
-    # date_string_list[1] = capitilize(date_string_list[1])
 
     if date_string_list[0] == 'сегодня': # handling 'сегодня в 19:27' case
         date_string_list[0] = str(datetime.today().strftime('%d'))
         date_string_list[1] = str(datetime.today().strftime('%B'))
         date_string_list[2] = str(datetime.today().strftime('%Y'))
 
-    elif date_string_list[0] == 'вчора':  # handling 'вчера в 19:27' case
+    elif date_string_list[0] == 'вчера':  # handling 'вчера в 19:27' case
         yesterday = datetime.today() - 1
         date_string_list[0] = str(yesterday.strftime('%d'))
         date_string_list[1] = str(yesterday.strftime('%B'))
         date_string_list[2] = str(yesterday.strftime('%Y'))
 
     else:
-        if date_string_list[1] == 'Мая':
-            date_string_list[1] = 'Mай'
+        if date_string_list[1] == 'мая':
+            date_string_list[1] = 'май'
         if len(date_string_list) == 3:  # handling '28 октября в 19:27' case
             date_string_list.insert(2, str(datetime.today().year))
 
@@ -95,7 +95,6 @@ def convert_date_string_for_parsing(date_string):
         date_string_list[0] += '0'
 
     date_string_list[1] = date_string_list[1][:3]
-    print(datetime.today().strftime('%d %b %Y %H:%M'))
     print(' '.join(date_string_list))
     return ' '.join(date_string_list)
 

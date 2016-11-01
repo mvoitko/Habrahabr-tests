@@ -71,4 +71,4 @@ def step_impl(context, sorting_param):
 def step_impl(context):
     page = MainPage(context.driver)
     posts_timestamps = page.get_posts_timestamps()
-    assert_that(posts_timestamps, equal_to(sorted(posts_timestamps)))
+    assert_that(posts_timestamps, equal_to(sorted(posts_timestamps, reverse=True)))
