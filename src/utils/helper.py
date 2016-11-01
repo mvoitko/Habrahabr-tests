@@ -11,10 +11,13 @@ from src import config
 
 locale.setlocale(locale.LC_ALL, 'ru_RU.UTF-8')
 
+
 def read_file(path=config.path_to_users, delimeter=','):
     """
     Check if email is in CSV file.
-    :type list: [row0, row1, ...]
+    :param path: path to csv file
+    :param delimeter: delimeter in csv file
+    :return rows: list of csv file rows [row0, row1, ...]
     """
     rows = []
     with open(path, 'r') as f:
@@ -26,7 +29,9 @@ def read_file(path=config.path_to_users, delimeter=','):
 def whether_in_file(email, rows):
     """
     Check if email is in CSV file.
-    :type boolen:
+    :param email: str
+    :param rows: list of csv file rows [row0, row1, ...]
+    :param is_in_file: boolen
     """
     is_in_file = False
     for row in rows:
@@ -39,21 +44,16 @@ def whether_in_file(email, rows):
 def form_dict_from_file(rows, key_column=0, value_column=1):
     """
     Parse credentials from CSV file to dictionary.
-    :type dict: {email:password}
+    :param rows: list of csv file rows [row0, row1, ...]
+    :param key_column: int - column index
+    :param value_column: int - column index
+    :return user_dictionary: dict - dictionary {key:value}
     """
     user_dictionary = {}
     for row in rows:
         user_dictionary[row[key_column]] = row[value_column]
     return user_dictionary
 
-def get_user_credentials(email, rows):
-    """
-    Parse credentials from CSV file to dictionary.
-    Generators
-    :type dict: {email:password}
-    """
-    for row in rows:
-        yield {row[0], row[1]}
 
 def capitilize(word):
     """
@@ -79,7 +79,7 @@ def convert_date_string_for_parsing(date_string):
         date_string_list[1] = str(datetime.today().strftime('%B'))
         date_string_list[2] = str(datetime.today().strftime('%Y'))
 
-    elif date_string_list[0] == 'вчора': # handling 'вчера в 19:27' case
+    elif date_string_list[0] == 'вчора':  # handling 'вчера в 19:27' case
         yesterday = datetime.today() - 1
         date_string_list[0] = str(yesterday.strftime('%d'))
         date_string_list[1] = str(yesterday.strftime('%B'))
@@ -91,13 +91,14 @@ def convert_date_string_for_parsing(date_string):
         if len(date_string_list) == 3:  # handling '28 октября в 19:27' case
             date_string_list.insert(2, str(datetime.today().year))
 
-    if date_string_list[0] == 1: # handling 1 digit day case
+    if date_string_list[0] == 1:  # handling 1 digit day case
         date_string_list[0] += '0'
 
     date_string_list[1] = date_string_list[1][:3]
     print(datetime.today().strftime('%d %b %Y %H:%M'))
     print(' '.join(date_string_list))
     return ' '.join(date_string_list)
+
 
 def parse_date(date_string, date_format="%d %b %Y %H:%M"):
     """
@@ -107,7 +108,7 @@ def parse_date(date_string, date_format="%d %b %Y %H:%M"):
     """
     converted_string = convert_date_string_for_parsing(date_string)
     return datetime.strptime(converted_string, date_format)
-    print (datetime.strptime(converted_string, date_format))
+    print(datetime.strptime(converted_string, date_format))
 
     '01 Ноябрь 2016 15:19'
     '17 Июля 2015 19:21'
