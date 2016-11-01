@@ -45,11 +45,9 @@ def step_impl(context, querry):
     page.search(context.querry)
 
 
-@then(u'I should be on the results page')
+@then(u'I see first result in the list')
 def step_impl(context):
     page = MainPage(context.driver)
-    page_title = page.get_page_title()
-    assert_that(page_title, contains_string(context.querry))
-
-# @then(u'the first search result should be visible')
-# def step_impl(context):
+    searched_item = page.get_text('searched item')
+    assert_that(searched_item.lower(), contains_string(context.querry.lower()))
+    assert_that(len(page.get_search_results()), is_(greater_than_or_equal_to(1)))

@@ -14,9 +14,8 @@ from src.utils import helper
 logging.basicConfig(filename="test.log", level=logging.DEBUG)
 __logger__ = logging.getLogger("test")
 
+
 #@capture
-
-
 def before_all(context):
     __logger__.info("BEFORE ALL")
     __logger__.info(">" * 20)
@@ -31,6 +30,7 @@ def after_all(context):
     __logger__.info("<" * 20)
     __logger__.info("AFTER FEATURE")
     context.driver.quit()
+    print("Total Failed: {}".format(context.failed))
 
 # #@capture
 # def before_feature(context, feature):

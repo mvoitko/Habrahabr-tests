@@ -26,6 +26,7 @@ class BasePage:
         """
         self.driver = driver
         self.timeout = 15
+        self.logger = logging.getLogger(self.__class__.__name__)
 
     def open(cls):
         """
@@ -43,11 +44,12 @@ class BasePage:
         """
         key = key.upper().replace(" ", "_")
         if key in cls.locators_dictionary:
-            element_locator = cls.locators_dictionary[key]
-            return element_locator
-        else:
-            raise AttributeError(
-                "Cannot find {0} locator on the {1} page".format(key, str(cls)))
+            try:
+                element_locator = cls.locators_dictionary[key]
+                return element_locator
+            except:
+                raise NoSuchElementException(
+                    "Cannot find {0} locator on the {1} page".format(key, str(cls)))
 
     def find(cls, key):
         """
@@ -59,6 +61,18 @@ class BasePage:
         WebDriverWait(cls.driver, cls.timeout).until(
             EC.presence_of_element_located(locator))
         return cls.driver.find_element(*locator)
+
+    def find_elems(cls, key):
+        """
+        Find element with specified locator.
+        :param key: str - web element key
+        :return: elements: list of selenium.webdriver.remote.webelement.WebElement
+        """
+        locator = cls._find_elem_by_key(key)
+        WebDriverWait(cls.driver, cls.timeout).until(
+            EC.presence_of_element_located(locator))
+        return cls.driver.find_elements(*locator)
+
 
     def click_on(self, key):
         """
@@ -84,8 +98,7 @@ class BasePage:
         :param key: str - web element key
         :return text: str - element text
         """
-        element = self.find(key)
-        return element.text
+        return self.find(key).text
 
     def get_page_title(self):
         """

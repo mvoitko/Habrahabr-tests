@@ -30,3 +30,17 @@ class MainPage(BasePage):
         self.fill('search field', querry)
         self.find('search field').send_keys(Keys.ENTER)
         return MainPage(self.driver)
+
+    def get_search_results(self):
+        """
+        Get search results.
+        :param querry: str - text to search
+        :return: results: list of elenium.webdriver.remote.webelement.WebElement
+        """
+        results = self.find_elems('posts')
+        results_texts = []
+        if len(results) >= 1:
+            for element in results:
+                results_texts.append(element.text)
+        print(results_texts)
+        return results_texts

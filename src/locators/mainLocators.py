@@ -16,7 +16,9 @@ class MainLocators:
     locators_dictionary = {
         "SEARCH_BUTTON": (By.ID, 'search-form-btn'),
         "SEARCH_FIELD": (By.ID, 'search-form-field'),
+        "SEARCHED_ITEM": (By.CLASS_NAME, 'searched-item'),
         "SEARCH_RESULTS": (By.CLASS_NAME, 'search_results'),
+        "POSTS": (By.CLASS_NAME, 'post'),
         "USER_NAME": (By.CSS_SELECTOR, 'dt>a'),
         "LOGIN_BUTTON": (By.ID, 'login'),
         "SIGN_UP": (By.CSS_SELECTOR,

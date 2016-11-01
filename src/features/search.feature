@@ -6,5 +6,5 @@ Feature: Search
 
  Scenario: I would like to search for a topic
     Given I am on the home page
-    When I search for "python testing with behave"
-    Then I should be on the results page
+    When I search for "behave"
+    Then I see first result in the list

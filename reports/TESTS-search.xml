@@ -1,20 +1,16 @@
-<testsuite errors="0" failures="1" name="search.Search" skipped="0" tests="1" time="8.582497"><testcase classname="search.Search" name="I would like to search for a topic" status="failed" time="8.582497"><failure message="&#10;Expected: a string containing 'python testing with behave'&#10;     but: was 'Интер..." type="AssertionError">
-<![CDATA[
-Failing step: Then I should be on the results page ... failed in 0.004s
-Location: src/features/search.feature:10
-Assertion Failed: 
-Expected: a string containing 'python testing with behave'
-     but: was 'Интересные публикации / Хабрахабр'
-]]>
-</failure><system-out>
+<testsuite errors="0" failures="0" name="search.Search" skipped="0" tests="1" time="10.386713"><testcase classname="search.Search" name="I would like to search for a topic" status="passed" time="10.386713"><system-out>
 <![CDATA[
 @scenario.begin
   Scenario: I would like to search for a topic
-    Given I am on the home page ... passed in 8.246s
-    When I search for "python testing with behave" ... passed in 0.332s
-    Then I should be on the results page ... failed in 0.004s
+    Given I am on the home page ... passed in 7.112s
+    When I search for "behave" ... passed in 0.281s
+    Then I see first result in the list ... passed in 2.994s
 
 @scenario.end
 --------------------------------------------------------------------------------
+
+Captured stdout:
+['17 июля 2015 в 19:21\nРазработка → Автоматизация тестирования веб-приложения с использованием Selenium WebDriver, Python, и Behave tutorial\nТестирование веб-сервисов*, Тестирование IT-систем*, Разработка веб-сайтов*, Python*\n... : behave на pypi Что такое behave? Behave — ... driven development?). Behave использует тесты ... , тоже) Сравнение behave с похожими инструментами. ... .html Behave: pythonhosted.org/behave Python: ...\nЧитать дальше →\n–1\n16k\n93\n@Pompeius_Magnus\n13', '18 апреля 2014 в 12:42\nРазработка → BDD-разработка на django tutorial\nDjango*, Python*, Тестирование IT-систем*\n... com/svfat/django-behave splinter Обратите ... потому что django-behave запускает тестовый сервер ... примерно таким:from behave import given, ... Что еще почитать: Behave documentation Splinter — test ...\nЧитать дальше →\n+23\n12,9k\n178\n@svfat\n41', '30 ноября 2012 в 22:18\nРазработка → Применение принципа DRY в RSpec\nТестирование IT-систем*, Ruby*\nDRY(Don’t Repeat Yourself) — один из краеугольных принципов современной разработки, а особенно в среде ruby-программистов. Но если при написании обычного кода повторяющиеся фрагменты обычно легко ...\nЧитать дальше →\n+26\n12,4k\n119\n@rsludge\n17', '15 октября 2015 в 10:51\nАдминистрирование → Нюансы связки ESXi, FlexFabric, 10 Gbit и NFS из песочницы\nИТ-инфраструктура*\n... /stacking links will behave like «OFF», and ... all server links behave like «ON». Команда ...\nЧитать дальше →\n+9\n13,2k\n74\n@chestor2\n12', '19 апреля в 06:12\nРазработка → PyNSK #7 — апрельская встреча Новосибирского Python сообщества\nТестирование IT-систем*, Разработка веб-сайтов*, Программирование*, Python*\nПитонисты Новосибирска и ближайших регионов, приглашаем вас на встречу сообщества Python сообщества — PyNSK. 30-го апреля (суббота) состоится седьмая встреча. Она пройдет в Культурном Центре « ...\nЧитать дальше →\n+5\n2,1k\n6\n@WarmongeR\nКомментировать', '18 мая 2007 в 14:25\nРазработка → Как превратить Firefox в Widefox? перевод\nFirefox\n... a scrollbar, so it behaves like the tab ...\nсделать работу еще приятнее\n+15\n953\n13\n@alammi\n20', '3 ноября 2010 в 01:15\nРазработка → Эволюция юнит-теста\nTDD*\n... ensure, narrative и «should behave as». Также BDD ...\nЧитать дальше →\n+80\n15,4k\n144\n@asolntsev\n68', '9 июля 2011 в 09:00\nАдминистрирование → Состоялся «Долгожданный» релиз Centos 6.0\nНастройка Linux*\n... that persons PC behave like that. Not ...\n+33\n1,2k\n3\n@opium\n101', '9 августа 2011 в 15:54\nРазработка → Drupal + Ajax + Свои шрифты + Flash + PNG = кроссбраузерный сайт из песочницы\nDrupal*\n... для Drupal — PNG behave. И он выполнил свою ...\nЧитать, как реализовано мной...\n+18\n2,6k\n60\n@shevgeny\n52', '27 октября 2011 в 16:25\nРазработка → REST vs SOAP. Часть 1. Почувствуйте разницу из песочницы\nРазработка веб-сайтов*\n... -designed Web application behaves». Но это ничего ...\nЧитать дальше →\n+95\n137k\n551\n@Artiom1988\n100']
+
 ]]>
 </system-out></testcase></testsuite>
