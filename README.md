@@ -7,7 +7,7 @@ This framework tests the basic functionality of Habrahabr web-app.
 
 ```shell
 git clone git@github.com:mvoitko/Habrahabr-tests.git
-cd python-bdd-behave
+cd path/to/Habrahabr-tests
 pip install -r requirements.txt
 ```
 
@@ -17,3 +17,5 @@ pip install -r requirements.txt
 behave # run all feature files
 behave features/ # run all feature files in the given folder
 behave features/search.feature # run the search.feature file only
+behave -t=smoke # run only features/scenarios with @smoke tag
+```

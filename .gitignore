@@ -2,6 +2,8 @@
 __pycache__/
 *.py[cod]
 *$py.class
+*.pyc
+*.cpython-35.pyc
 
 # C extensions
 *.so
@@ -87,3 +89,8 @@ ENV/
 
 # Rope project settings
 .ropeproject
+
+#Sublime files
+*.sublime-project
+*.sublime-workspace
+

@@ -1,0 +1,34 @@
+<testsuite errors="0" failures="0" name="login.Login" skipped="3" tests="3" time="0.0"><testcase classname="login.Login" name="Login with correct credentials -- @1.1 " status="skipped" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario Outline: Login with correct credentials -- @1.1 
+    Given I have an account for "habrtest@mailinator.com" ... skipped in 0.000s
+    When I log in ... skipped in 0.000s
+    Then I should see personalized page ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="login.Login" name="Login with correct credentials -- @1.2 " status="skipped" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario Outline: Login with correct credentials -- @1.2 
+    Given I have an account for "habr_test@mailinator.com" ... skipped in 0.000s
+    When I log in ... skipped in 0.000s
+    Then I should see personalized page ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="login.Login" name="Login with correct credentials -- @1.3 " status="skipped" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario Outline: Login with correct credentials -- @1.3 
+    Given I have an account for "044244244@mailinator.com" ... skipped in 0.000s
+    When I log in ... skipped in 0.000s
+    Then I should see personalized page ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase></testsuite>
