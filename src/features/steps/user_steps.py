@@ -49,5 +49,26 @@ def step_impl(context, querry):
 def step_impl(context):
     page = MainPage(context.driver)
     searched_item = page.get_text('searched item')
-    assert_that(searched_item.lower(), contains_string(context.querry.lower()))
+    print(page.get_search_results())
     assert_that(len(page.get_search_results()), is_(greater_than_or_equal_to(1)))
+    assert_that(searched_item.lower(), contains_string(context.querry.lower()))
+
+@given(u'I see search results for "{querry}"')
+def step_impl(context, querry):
+    page = MainPage(context.driver)
+    page.open()
+    context.querry = querry
+    page.search(context.querry)
+
+
+@when(u'I apply sorting by "{sorting_param}"')
+def step_impl(context, sorting_param):
+    context.sorting_param = sorting_param
+    page = MainPage(context.driver)
+    page.sort_by(sorting_param)
+
+@then(u'I see sorted search results')
+def step_impl(context):
+    page = MainPage(context.driver)
+    posts_timestamps = page.get_posts_timestamps()
+    assert_that(posts_timestamps, equal_to(sorted(posts_timestamps)))

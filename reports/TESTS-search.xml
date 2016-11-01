@@ -1,16 +1,86 @@
-<testsuite errors="0" failures="0" name="search.Search" skipped="0" tests="1" time="10.386713"><testcase classname="search.Search" name="I would like to search for a topic" status="passed" time="10.386713"><system-out>
+<testsuite errors="1" failures="0" name="search.Search" skipped="2" tests="3" time="12.563087"><testcase classname="search.Search" name="I would like to search for a topic" status="skipped" time="0"><skipped /><system-out>
 <![CDATA[
 @scenario.begin
   Scenario: I would like to search for a topic
-    Given I am on the home page ... passed in 7.112s
-    When I search for "behave" ... passed in 0.281s
-    Then I see first result in the list ... passed in 2.994s
+    Given I am on the home page ... skipped in 0.000s
+    When I search for "behave" ... skipped in 0.000s
+    Then I see first result in the list ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="search.Search" name="I would like to sort search results by timing" status="failed" time="12.563087"><error message="time data '18 мая 2007 14:25' does not match format '%d %b %Y %H:%M'" type="ValueError">
+<![CDATA[
+Failing step: Then I see sorted search results ... failed in 0.052s
+Location: src/features/search.feature:14
+Traceback (most recent call last):
+  File "/home/mvoitko/.virtualenvs/Habrahabr-tests/lib/python3.5/site-packages/behave/model.py", line 1456, in run
+    match.run(runner.context)
+  File "/home/mvoitko/.virtualenvs/Habrahabr-tests/lib/python3.5/site-packages/behave/model.py", line 1903, in run
+    self.func(context, *args, **kwargs)
+  File "src/features/steps/user_steps.py", line 73, in step_impl
+    posts_timestamps = page.get_posts_timestamps()
+  File "/home/mvoitko/Documents/projects/Habrahabr_tests/src/pages/mainPage.py", line 71, in get_posts_timestamps
+    date_object = helper.parse_date(timestamp.text)
+  File "/home/mvoitko/Documents/projects/Habrahabr_tests/src/utils/helper.py", line 109, in parse_date
+    return datetime.strptime(converted_string, date_format)
+  File "/usr/lib/python3.5/_strptime.py", line 510, in _strptime_datetime
+    tt, fraction = _strptime(data_string, format)
+  File "/usr/lib/python3.5/_strptime.py", line 343, in _strptime
+    (data_string, format))
+ValueError: time data '18 мая 2007 14:25' does not match format '%d %b %Y %H:%M'
+
+Captured stdout:
+01 ноя 2016 17:29
+17 июл 2015 19:21
+01 ноя 2016 17:29
+18 апр 2014 12:42
+01 ноя 2016 17:29
+30 ноя 2012 22:18
+01 ноя 2016 17:29
+15 окт 2015 10:51
+01 ноя 2016 17:29
+19 апр 2016 06:12
+01 ноя 2016 17:29
+18 мая 2007 14:25
+]]>
+</error><system-out>
+<![CDATA[
+@scenario.begin
+
+  @wip
+  Scenario: I would like to sort search results by timing
+    Given I see search results for "behave" ... passed in 11.064s
+    When I apply sorting by "time" ... passed in 1.448s
+    Then I see sorted search results ... failed in 0.052s
 
 @scenario.end
 --------------------------------------------------------------------------------
 
 Captured stdout:
-['17 июля 2015 в 19:21\nРазработка → Автоматизация тестирования веб-приложения с использованием Selenium WebDriver, Python, и Behave tutorial\nТестирование веб-сервисов*, Тестирование IT-систем*, Разработка веб-сайтов*, Python*\n... : behave на pypi Что такое behave? Behave — ... driven development?). Behave использует тесты ... , тоже) Сравнение behave с похожими инструментами. ... .html Behave: pythonhosted.org/behave Python: ...\nЧитать дальше →\n–1\n16k\n93\n@Pompeius_Magnus\n13', '18 апреля 2014 в 12:42\nРазработка → BDD-разработка на django tutorial\nDjango*, Python*, Тестирование IT-систем*\n... com/svfat/django-behave splinter Обратите ... потому что django-behave запускает тестовый сервер ... примерно таким:from behave import given, ... Что еще почитать: Behave documentation Splinter — test ...\nЧитать дальше →\n+23\n12,9k\n178\n@svfat\n41', '30 ноября 2012 в 22:18\nРазработка → Применение принципа DRY в RSpec\nТестирование IT-систем*, Ruby*\nDRY(Don’t Repeat Yourself) — один из краеугольных принципов современной разработки, а особенно в среде ruby-программистов. Но если при написании обычного кода повторяющиеся фрагменты обычно легко ...\nЧитать дальше →\n+26\n12,4k\n119\n@rsludge\n17', '15 октября 2015 в 10:51\nАдминистрирование → Нюансы связки ESXi, FlexFabric, 10 Gbit и NFS из песочницы\nИТ-инфраструктура*\n... /stacking links will behave like «OFF», and ... all server links behave like «ON». Команда ...\nЧитать дальше →\n+9\n13,2k\n74\n@chestor2\n12', '19 апреля в 06:12\nРазработка → PyNSK #7 — апрельская встреча Новосибирского Python сообщества\nТестирование IT-систем*, Разработка веб-сайтов*, Программирование*, Python*\nПитонисты Новосибирска и ближайших регионов, приглашаем вас на встречу сообщества Python сообщества — PyNSK. 30-го апреля (суббота) состоится седьмая встреча. Она пройдет в Культурном Центре « ...\nЧитать дальше →\n+5\n2,1k\n6\n@WarmongeR\nКомментировать', '18 мая 2007 в 14:25\nРазработка → Как превратить Firefox в Widefox? перевод\nFirefox\n... a scrollbar, so it behaves like the tab ...\nсделать работу еще приятнее\n+15\n953\n13\n@alammi\n20', '3 ноября 2010 в 01:15\nРазработка → Эволюция юнит-теста\nTDD*\n... ensure, narrative и «should behave as». Также BDD ...\nЧитать дальше →\n+80\n15,4k\n144\n@asolntsev\n68', '9 июля 2011 в 09:00\nАдминистрирование → Состоялся «Долгожданный» релиз Centos 6.0\nНастройка Linux*\n... that persons PC behave like that. Not ...\n+33\n1,2k\n3\n@opium\n101', '9 августа 2011 в 15:54\nРазработка → Drupal + Ajax + Свои шрифты + Flash + PNG = кроссбраузерный сайт из песочницы\nDrupal*\n... для Drupal — PNG behave. И он выполнил свою ...\nЧитать, как реализовано мной...\n+18\n2,6k\n60\n@shevgeny\n52', '27 октября 2011 в 16:25\nРазработка → REST vs SOAP. Часть 1. Почувствуйте разницу из песочницы\nРазработка веб-сайтов*\n... -designed Web application behaves». Но это ничего ...\nЧитать дальше →\n+95\n137k\n551\n@Artiom1988\n100']
+01 ноя 2016 17:29
+17 июл 2015 19:21
+01 ноя 2016 17:29
+18 апр 2014 12:42
+01 ноя 2016 17:29
+30 ноя 2012 22:18
+01 ноя 2016 17:29
+15 окт 2015 10:51
+01 ноя 2016 17:29
+19 апр 2016 06:12
+01 ноя 2016 17:29
+18 мая 2007 14:25
 
+]]>
+</system-out></testcase><testcase classname="search.Search" name="I would like to see respective message when no results found" status="skipped" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario: I would like to see respective message when no results found
+    Given I am on the home page ... skipped in 0.000s
+    When I search for "behave" ... skipped in 0.000s
+    Then I see first result in the list ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
 ]]>
 </system-out></testcase></testsuite>

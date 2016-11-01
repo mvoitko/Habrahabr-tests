@@ -3,13 +3,18 @@ Created on Oct 28, 2016
 
 @author: mvoitko
 """
+from datetime import datetime
+import locale
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 
 from src import config
 from src.pages.basePage import BasePage
 from src.locators.mainLocators import MainLocators
+from src.utils import helper
 
+
+# locale.setlocale(locale.LC_ALL, 'ru_RU.UTF-8')
 
 class MainPage(BasePage):
     """
@@ -24,7 +29,7 @@ class MainPage(BasePage):
         """
         Search given querry.
         :param querry: str - text to search
-        :return: element: selenium.webdriver.remote.webelement.WebElement
+        :return: driver: selenium.webdriver.*
         """
         self.click_on('search button')
         self.fill('search field', querry)
@@ -43,4 +48,26 @@ class MainPage(BasePage):
             for element in results:
                 results_texts.append(element.text)
         print(results_texts)
-        return results_texts
+        return
+
+    def sort_by(self, sorting_param):
+        """
+        Sort search results page.
+        :type sorting_param: str - sort by parameter
+        """
+        sorting_param_list = {
+            "relevance": "SORT_BY_RELEVANCE",
+            "time": "SORT_BY_TIME",
+            "rating": "SORT_BY_RATING"
+        }
+        self.click_on(sorting_param_list[sorting_param])
+
+    def get_posts_timestamps(self):
+        """
+        Get posts timestamps.
+        """
+        timestamps = []
+        for timestamp in self.find_elems('post timestamp'):
+            date_object = helper.parse_date(timestamp.text)
+            timestamps.append(date_object)
+        return timestamps
