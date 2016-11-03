@@ -3,8 +3,9 @@ Created on Oct 28, 2016
 
 @author: mvoitko
 """
-from datetime import datetime
 import locale
+import re
+from datetime import datetime
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 
@@ -48,7 +49,7 @@ class MainPage(BasePage):
             for element in results:
                 results_texts.append(element.text)
         print(results_texts)
-        return
+        return results_texts
 
     def sort_by(self, sorting_param):
         """
@@ -61,6 +62,7 @@ class MainPage(BasePage):
             "rating": "SORT_BY_RATING"
         }
         self.click_on(sorting_param_list[sorting_param])
+        return MainPage(self.driver)
 
     def get_posts_timestamps(self):
         """
@@ -68,6 +70,10 @@ class MainPage(BasePage):
         """
         timestamps = []
         for timestamp in self.find_elems('post timestamp'):
+            if re.match(pattern_today, timestamp.text):
+                date_object = helper.parse_today(timestamp.text)
+            elif re.match(pattern_yesterday, timestamp.text):
+                date_object = helper.parse_yesterday(timestamp.text)
             date_object = helper.parse_date(timestamp.text)
             timestamps.append(date_object)
         return timestamps

@@ -3,8 +3,10 @@ Created on Oct 28, 2016
 
 @author: mvoitko
 """
+import time
 from behave import *
 from hamcrest import *
+from selenium import webdriver
 
 from src.pages.loginPage import LoginPage
 from src.pages.mainPage import MainPage
@@ -70,5 +72,13 @@ def step_impl(context, sorting_param):
 @then(u'I see sorted search results')
 def step_impl(context):
     page = MainPage(context.driver)
+    context.driver.implicitly_wait(3)
     posts_timestamps = page.get_posts_timestamps()
     assert_that(posts_timestamps, equal_to(sorted(posts_timestamps, reverse=True)))
+
+@then(u'I see "{empty_state_text}" empty state message')
+def step_impl(context, empty_state_text):
+    page = MainPage(context.driver)
+    context.driver.implicitly_wait(3)
+    message_text = page.get_text('empty state')
+    assert_that(message_text, )

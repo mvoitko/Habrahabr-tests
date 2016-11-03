@@ -20,6 +20,7 @@ def before_all(context):
     __logger__.info("BEFORE ALL")
     __logger__.info(">" * 20)
     context.driver = webdriver.Firefox()
+    context.driver.implicitly_wait(2)
     context.driver.maximize_window()
     context.file_content = helper.read_file()
     context.credentials = helper.form_dict_from_file(context.file_content)

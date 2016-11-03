@@ -7,13 +7,13 @@ Feature: Search
         Given I am on the home page
         When I search for "behave"
         Then I see first result in the list
-    @wip
+
     Scenario: I would like to sort search results by timing
         Given I see search results for "behave"
         When I apply sorting by "time"
         Then I see sorted search results
-
+    @wip
     Scenario: I would like to see respective message when no results found
         Given I am on the home page
-        When I search for "behave"
-        Then I see first result in the list
+        When I search for "blahblahblahblahblahblah"
+        Then I see "Сожалеем, поиск в топиках не дал результатов" empty state message

@@ -1,4 +1,4 @@
-<testsuite errors="0" failures="1" name="search.Search" skipped="2" tests="3" time="10.259451"><testcase classname="search.Search" name="I would like to search for a topic" status="skipped" time="0"><skipped /><system-out>
+<testsuite errors="0" failures="0" name="search.Search" skipped="2" tests="3" time="11.063237"><testcase classname="search.Search" name="I would like to search for a topic" status="skipped" time="0"><skipped /><system-out>
 <![CDATA[
 @scenario.begin
   Scenario: I would like to search for a topic
@@ -9,59 +9,26 @@
 @scenario.end
 --------------------------------------------------------------------------------
 ]]>
-</system-out></testcase><testcase classname="search.Search" name="I would like to sort search results by timing" status="failed" time="10.259451"><failure message="&#10;Expected: &lt;[datetime.datetime(2016, 4, 19, 6, 12), datetime.datetime(2015, 10, ..." type="AssertionError">
+</system-out></testcase><testcase classname="search.Search" name="I would like to sort search results by timing" status="skipped" time="0"><skipped /><system-out>
 <![CDATA[
-Failing step: Then I see sorted search results ... failed in 0.148s
-Location: src/features/search.feature:14
-Assertion Failed: 
-Expected: <[datetime.datetime(2016, 4, 19, 6, 12), datetime.datetime(2015, 10, 15, 10, 51), datetime.datetime(2015, 7, 17, 19, 21), datetime.datetime(2014, 4, 18, 12, 42), datetime.datetime(2012, 11, 30, 22, 18), datetime.datetime(2011, 10, 27, 16, 25), datetime.datetime(2011, 8, 9, 15, 54), datetime.datetime(2011, 7, 9, 9, 0), datetime.datetime(2010, 11, 3, 1, 15), datetime.datetime(2007, 5, 18, 14, 25)]>
-     but: was <[datetime.datetime(2015, 7, 17, 19, 21), datetime.datetime(2014, 4, 18, 12, 42), datetime.datetime(2012, 11, 30, 22, 18), datetime.datetime(2015, 10, 15, 10, 51), datetime.datetime(2016, 4, 19, 6, 12), datetime.datetime(2007, 5, 18, 14, 25), datetime.datetime(2010, 11, 3, 1, 15), datetime.datetime(2011, 7, 9, 9, 0), datetime.datetime(2011, 8, 9, 15, 54), datetime.datetime(2011, 10, 27, 16, 25)]>
+@scenario.begin
+  Scenario: I would like to sort search results by timing
+    Given I see search results for "behave" ... skipped in 0.000s
+    When I apply sorting by "time" ... skipped in 0.000s
+    Then I see sorted search results ... skipped in 0.000s
 
-Captured stdout:
-17 июл 2015 19:21
-18 апр 2014 12:42
-30 ноя 2012 22:18
-15 окт 2015 10:51
-19 апр 2016 06:12
-18 май 2007 14:25
-3 ноя 2010 01:15
-9 июл 2011 09:00
-9 авг 2011 15:54
-27 окт 2011 16:25
+@scenario.end
+--------------------------------------------------------------------------------
 ]]>
-</failure><system-out>
+</system-out></testcase><testcase classname="search.Search" name="I would like to see respective message when no results found" status="passed" time="11.063237"><system-out>
 <![CDATA[
 @scenario.begin
 
   @wip
-  Scenario: I would like to sort search results by timing
-    Given I see search results for "behave" ... passed in 8.151s
-    When I apply sorting by "time" ... passed in 1.961s
-    Then I see sorted search results ... failed in 0.148s
-
-@scenario.end
---------------------------------------------------------------------------------
-
-Captured stdout:
-17 июл 2015 19:21
-18 апр 2014 12:42
-30 ноя 2012 22:18
-15 окт 2015 10:51
-19 апр 2016 06:12
-18 май 2007 14:25
-3 ноя 2010 01:15
-9 июл 2011 09:00
-9 авг 2011 15:54
-27 окт 2011 16:25
-
-]]>
-</system-out></testcase><testcase classname="search.Search" name="I would like to see respective message when no results found" status="skipped" time="0"><skipped /><system-out>
-<![CDATA[
-@scenario.begin
   Scenario: I would like to see respective message when no results found
-    Given I am on the home page ... skipped in 0.000s
-    When I search for "behave" ... skipped in 0.000s
-    Then I see first result in the list ... skipped in 0.000s
+    Given I am on the home page ... passed in 9.153s
+    When I search for "blahblahblahblahblahblah" ... passed in 0.384s
+    Then I see "Сожалеем, поиск в топиках не дал результатов" empty state message ... passed in 1.526s
 
 @scenario.end
 --------------------------------------------------------------------------------
