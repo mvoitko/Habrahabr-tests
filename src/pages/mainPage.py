@@ -8,6 +8,7 @@ import re
 from datetime import datetime
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
+from selenium.common.exceptions import *
 
 from src import config
 from src.pages.basePage import BasePage
@@ -30,7 +31,7 @@ class MainPage(BasePage):
         """
         Search given querry.
         :param querry: str - text to search
-        :return: driver: selenium.webdriver.*
+        :return: MainPage: selenium.webdriver.*
         """
         self.click_on('search button')
         self.fill('search field', querry)
@@ -41,7 +42,7 @@ class MainPage(BasePage):
         """
         Get search results.
         :param querry: str - text to search
-        :return: results: list of elenium.webdriver.remote.webelement.WebElement
+        :return: results: list of selenium.webdriver.remote.webelement.WebElement
         """
         results = self.find_elems('posts')
         results_texts = []
@@ -53,27 +54,34 @@ class MainPage(BasePage):
 
     def sort_by(self, sorting_param):
         """
-        Sort search results page.
-        :type sorting_param: str - sort by parameter
+        Sort search results page by given sorting parameter.
+        :param sorting_param: str - sort by parameter
+        :return: MainPage: selenium.webdriver.*
         """
-        sorting_param_list = {
-            "relevance": "SORT_BY_RELEVANCE",
-            "time": "SORT_BY_TIME",
-            "rating": "SORT_BY_RATING"
-        }
-        self.click_on(sorting_param_list[sorting_param])
+        sorting_param = "sort by " + sorting_param
+        self.click_on(sorting_param)
         return MainPage(self.driver)
 
     def get_posts_timestamps(self):
         """
         Get posts timestamps.
+        :return: timestamps: list of datetime objects of posts.
         """
+
         timestamps = []
-        for timestamp in self.find_elems('post timestamp'):
-            if re.match(pattern_today, timestamp.text):
+        timestamp_elements = self.find_elems('post timestamp')
+        for timestamp in timestamp_elements:
+            if re.match(helper.pattern_today, timestamp.text, re.IGNORECASE):
                 date_object = helper.parse_today(timestamp.text)
-            elif re.match(pattern_yesterday, timestamp.text):
+            elif re.match(helper.pattern_yesterday, timestamp.text, re.IGNORECASE):
                 date_object = helper.parse_yesterday(timestamp.text)
-            date_object = helper.parse_date(timestamp.text)
+            elif re.match(helper.pattern_current_year, timestamp.text, re.IGNORECASE):
+                date_object = helper.parse_current_year(timestamp.text)
+            elif re.match(helper.pattern_full, timestamp.text):
+                date_object = helper.parse_full(timestamp.text)
+            else:
+                raise NoSuchElementException(
+                    "Cannot find {0} locator on the {1} page".format(key, str(cls)))
             timestamps.append(date_object)
+        print(timestamps)
         return timestamps

@@ -3,14 +3,13 @@ Created on Oct 28, 2016
 
 @author: mvoitko
 """
-import time
 from behave import *
 from hamcrest import *
 from selenium import webdriver
 
 from src.pages.loginPage import LoginPage
 from src.pages.mainPage import MainPage
-from src.utils.helper import *
+from src.utils import helper
 
 
 # use_step_matcher('re')
@@ -81,4 +80,4 @@ def step_impl(context, empty_state_text):
     page = MainPage(context.driver)
     context.driver.implicitly_wait(3)
     message_text = page.get_text('empty state')
-    assert_that(message_text, )
+    assert_that(message_text, equal_to(empty_state_text))

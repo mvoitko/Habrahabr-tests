@@ -7,12 +7,12 @@ Feature: Search
         Given I am on the home page
         When I search for "behave"
         Then I see first result in the list
-
+    @wip
     Scenario: I would like to sort search results by timing
-        Given I see search results for "behave"
+        Given I see search results for "behave python"
         When I apply sorting by "time"
         Then I see sorted search results
-    @wip
+
     Scenario: I would like to see respective message when no results found
         Given I am on the home page
         When I search for "blahblahblahblahblahblah"

@@ -25,11 +25,11 @@ class MainLocators:
 
         "POSTS": (By.CLASS_NAME, 'post'),
 
-        "SORT_BY_TIME": (By.CSS_SELECTOR, 'a[href*="behave&order_by=date"]'),
+        "SORT_BY_TIME": (By.CSS_SELECTOR, 'ul.sort_menu *:nth-child(3)'),
 
-        "SORT_BY_RELEVANCE": (By.CSS_SELECTOR, 'a[href*="behave&order_by=relevance"]'),
+        "SORT_BY_RELEVANCE": (By.CSS_SELECTOR, 'ul.sort_menu *:nth-child(2)'),
 
-        "SORT_BY_RATING": (By.CSS_SELECTOR, 'a[href*="behave&order_by=rating"]'),
+        "SORT_BY_RATING": (By.CSS_SELECTOR, 'ul.sort_menu *:nth-child(4)"]'),
 
         "POST_TIMESTAMP": (By.CLASS_NAME, 'post__time_published'),
 

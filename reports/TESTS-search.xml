@@ -1,4 +1,4 @@
-<testsuite errors="0" failures="0" name="search.Search" skipped="2" tests="3" time="11.063237"><testcase classname="search.Search" name="I would like to search for a topic" status="skipped" time="0"><skipped /><system-out>
+<testsuite errors="1" failures="0" name="search.Search" skipped="2" tests="3" time="14.872865"><testcase classname="search.Search" name="I would like to search for a topic" status="skipped" time="0"><skipped /><system-out>
 <![CDATA[
 @scenario.begin
   Scenario: I would like to search for a topic
@@ -9,26 +9,43 @@
 @scenario.end
 --------------------------------------------------------------------------------
 ]]>
-</system-out></testcase><testcase classname="search.Search" name="I would like to sort search results by timing" status="skipped" time="0"><skipped /><system-out>
+</system-out></testcase><testcase classname="search.Search" name="I would like to sort search results by timing" status="failed" time="14.872865"><error message="'NoneType' object has no attribute 'group'" type="AttributeError">
 <![CDATA[
-@scenario.begin
-  Scenario: I would like to sort search results by timing
-    Given I see search results for "behave" ... skipped in 0.000s
-    When I apply sorting by "time" ... skipped in 0.000s
-    Then I see sorted search results ... skipped in 0.000s
-
-@scenario.end
---------------------------------------------------------------------------------
+Failing step: Then I see sorted search results ... failed in 0.070s
+Location: src/features/search.feature:14
+Traceback (most recent call last):
+  File "/home/mvoitko/.virtualenvs/Habrahabr-tests/lib/python3.5/site-packages/behave/model.py", line 1456, in run
+    match.run(runner.context)
+  File "/home/mvoitko/.virtualenvs/Habrahabr-tests/lib/python3.5/site-packages/behave/model.py", line 1903, in run
+    self.func(context, *args, **kwargs)
+  File "src/features/steps/user_steps.py", line 75, in step_impl
+    posts_timestamps = page.get_posts_timestamps()
+  File "/home/mvoitko/Documents/projects/Habrahabr_tests/src/pages/mainPage.py", line 79, in get_posts_timestamps
+    date_object = helper.parse_current_year(timestamp.text)
+  File "/home/mvoitko/Documents/projects/Habrahabr_tests/src/utils/helper.py", line 111, in parse_current_year
+    month = month_re.group(0)
+AttributeError: 'NoneType' object has no attribute 'group'
 ]]>
-</system-out></testcase><testcase classname="search.Search" name="I would like to see respective message when no results found" status="passed" time="11.063237"><system-out>
+</error><system-out>
 <![CDATA[
 @scenario.begin
 
   @wip
+  Scenario: I would like to sort search results by timing
+    Given I see search results for "behave python" ... passed in 13.239s
+    When I apply sorting by "time" ... passed in 1.563s
+    Then I see sorted search results ... failed in 0.070s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="search.Search" name="I would like to see respective message when no results found" status="skipped" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
   Scenario: I would like to see respective message when no results found
-    Given I am on the home page ... passed in 9.153s
-    When I search for "blahblahblahblahblahblah" ... passed in 0.384s
-    Then I see "Сожалеем, поиск в топиках не дал результатов" empty state message ... passed in 1.526s
+    Given I am on the home page ... skipped in 0.000s
+    When I search for "blahblahblahblahblahblah" ... skipped in 0.000s
+    Then I see "Сожалеем, поиск в топиках не дал результатов" empty state message ... skipped in 0.000s
 
 @scenario.end
 --------------------------------------------------------------------------------
