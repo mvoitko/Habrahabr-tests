@@ -30,7 +30,7 @@ def before_all(context):
 def after_all(context):
     __logger__.info("<" * 20)
     __logger__.info("AFTER FEATURE")
-    context.driver.close()
+    context.driver.quit()
     print("Failed: {}".format(context.failed))
 
 # #@capture
