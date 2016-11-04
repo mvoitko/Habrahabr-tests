@@ -60,7 +60,7 @@ class MainPage(BasePage):
         """
         sorting_param = "sort by " + sorting_param
         self.click_on(sorting_param)
-        return MainPage(self.driver)
+        # return MainPage(self.driver)
 
     def get_posts_timestamps(self):
         """
@@ -83,5 +83,4 @@ class MainPage(BasePage):
                 raise NoSuchElementException(
                     "Cannot find {0} locator on the {1} page".format(key, str(cls)))
             timestamps.append(date_object)
-        print(timestamps)
         return timestamps

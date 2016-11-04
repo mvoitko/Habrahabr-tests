@@ -70,8 +70,10 @@ def parse_today(date_string, date_format='%d %b %Y %H:%M'):
     :type date_format: str - str with date format for parsing
     :return: datetime object
     """
+    print(date_string)
     converted_string = re.sub('(сегодня)\s(в)', date_string,
                               str(datetime.today().strftime('%d %B %Y')))
+    print(converted_string)
     month_re = re.search('([а-я]{3,8})', converted_string, re.IGNORECASE)
     month = month_re.group(0)
     converted_string = converted_string.replace(month, month[:3])
@@ -87,9 +89,10 @@ def parse_yesterday(date_string, date_format='%d %b %Y %H:%M'):
     :type date_format: str - str with date format for parsing
     :return: datetime object
     """
+    print(date_string)
     yesterday = datetime.today() - timedelta(day=1)
-    converted_string = re.sub('(вчера)\s(в)', date_string,
-                                yesterday.strftime('%d %B %Y'))
+    converted_string = date_string.replace('вчера в', str(yesterday.strftime('%d %B %Y')))
+    print(converted_string)
     month_re = re.search('([а-я]{3,8})', converted_string, re.IGNORECASE)
     month = month_re.group(0)
     converted_string = converted_string.replace(month, month[:3])
@@ -105,8 +108,7 @@ def parse_current_year(date_string, date_format='%d %b %Y %H:%M'):
     :type date_format: str - str with date format for parsing
     :return: datetime object
     """
-    converted_string = re.sub('\s(в)', date_string,
-                              datetime.today().strftime('%Y'))
+    converted_string = date_string.replace(u'в', str(datetime.today().strftime('%Y')))
     month_re = re.search('([а-я]{3,8})', converted_string, re.IGNORECASE)
     month = month_re.group(0)
     converted_string = converted_string.replace(month, month[:3])

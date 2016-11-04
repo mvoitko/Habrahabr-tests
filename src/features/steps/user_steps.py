@@ -71,7 +71,8 @@ def step_impl(context, sorting_param):
 @then(u'I see sorted search results')
 def step_impl(context):
     page = MainPage(context.driver)
-    context.driver.implicitly_wait(3)
+    page.sort_by('time')
+    # context.driver.implicitly_wait(5)
     posts_timestamps = page.get_posts_timestamps()
     assert_that(posts_timestamps, equal_to(sorted(posts_timestamps, reverse=True)))
 
