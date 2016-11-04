@@ -1,7 +1,13 @@
 # Habrahabr-tests
 BDD Test scenarios for Habrahabr with Python 3.5.
 
-This framework tests the basic functionality of Habrahabr web-app.
+This framework tests the basic functionality of Habrahabr web-app using page object model.
+
+
+Based on:
+- Behave - BDD testing https://behave.readthedocs.org
+- Selenium - web applications testing https://selenium-python.readthedocs.org
+- PyHamcrest - matchers and assertions https://pyhamcrest.readthedocs.org
 
 ## Setup
 
