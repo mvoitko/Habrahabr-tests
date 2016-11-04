@@ -61,80 +61,6 @@ def form_dict_from_file(rows, key_column=0, value_column=1):
     return user_dictionary
 
 
-def parse_today(date_string, date_format='%d %b %Y %H:%M'):
-    """
-    Parse date string to datetime object.
-    Example:
-    date_string: 'сегодня в 13:30'
-    :type date_string: str - str with post timestamp
-    :type date_format: str - str with date format for parsing
-    :return: datetime object
-    """
-    print(date_string)
-    converted_string = re.sub('(сегодня)\s(в)', date_string,
-                              str(datetime.today().strftime('%d %B %Y')))
-    print(converted_string)
-    month_re = re.search('([а-я]{3,8})', converted_string, re.IGNORECASE)
-    month = month_re.group(0)
-    converted_string = converted_string.replace(month, month[:3])
-    return datetime.strptime(converted_string, date_format)
-
-
-def parse_yesterday(date_string, date_format='%d %b %Y %H:%M'):
-    """
-    Parse date string to datetime object.
-    Example:
-    date_string: 'вчера в 09:11'
-    :type date_string: str - str with post timestamp
-    :type date_format: str - str with date format for parsing
-    :return: datetime object
-    """
-    print(date_string)
-    yesterday = datetime.today() - timedelta(day=1)
-    converted_string = date_string.replace('вчера в', str(yesterday.strftime('%d %B %Y')))
-    print(converted_string)
-    month_re = re.search('([а-я]{3,8})', converted_string, re.IGNORECASE)
-    month = month_re.group(0)
-    converted_string = converted_string.replace(month, month[:3])
-    return datetime.strptime(converted_string, date_format)
-
-
-def parse_current_year(date_string, date_format='%d %b %Y %H:%M'):
-    """
-    Parse date string to datetime object.
-    Example:
-    date_string: '1 марта в 06:59'
-    :type date_string: str - str with post timestamp
-    :type date_format: str - str with date format for parsing
-    :return: datetime object
-    """
-    converted_string = date_string.replace(u'в', str(datetime.today().strftime('%Y')))
-    month_re = re.search('([а-я]{3,8})', converted_string, re.IGNORECASE)
-    month = month_re.group(0)
-    converted_string = converted_string.replace(month, month[:3])
-    if u'мая' in converted_string:
-        converted_string = converted_string.replace(u'мая', u'май')
-    return datetime.strptime(converted_string, date_format)
-
-
-def parse_full(date_string, date_format='%d %b %Y %H:%M'):
-    """
-    Parse date string to datetime object.
-    Example:
-    date_string: '17 ноября 2015 в 12:01'
-    :type date_string: str - str with post timestamp
-    :type date_format: str - str with date format for parsing
-    :return: datetime object
-    """
-    converted_string = date_string.replace('в ', '')
-    month_re = re.search('([а-я]{3,8})', converted_string, re.IGNORECASE)
-    month = month_re.group(0)
-    converted_string = converted_string.replace(month, month[:3])
-    if u'мая' in converted_string:
-        converted_string = converted_string.replace(u'мая', u'май')
-    return datetime.strptime(converted_string, date_format)
-
-
 def format_month(date_string, month_pattern='([а-я]{3,8})'):
     """
     Format month in string for parsing.
@@ -147,3 +73,63 @@ def format_month(date_string, month_pattern='([а-я]{3,8})'):
     if u'мая' in converted_string:
         converted_string = converted_string.replace(u'мая', u'май')
     return converted_string
+
+
+def parse_today(date_string, date_format='%d %b %Y %H:%M'):
+    """
+    Parse date string to datetime object.
+    Example:
+    date_string: 'сегодня в 13:30'
+    :type date_string: str - str with post timestamp
+    :type date_format: str - str with date format for parsing
+    :return: datetime object
+    """
+    converted_string = date_string.replace(u'сегодня в', date_string,
+                            str(datetime.today().strftime('%d %B %Y')))
+    converted_string = format_month(converted_string)
+    return datetime.strptime(converted_string, date_format)
+
+
+def parse_yesterday(date_string, date_format='%d %b %Y %H:%M'):
+    """
+    Parse date string to datetime object.
+    Example:
+    date_string: 'вчера в 09:11'
+    :type date_string: str - str with post timestamp
+    :type date_format: str - str with date format for parsing
+    :return: datetime object
+    """
+    yesterday = datetime.today() - timedelta(day=1)
+    converted_string = date_string.replace(u'вчера в',
+                                str(yesterday.strftime('%d %B %Y')))
+    converted_string = format_month(converted_string)
+    return datetime.strptime(converted_string, date_format)
+
+
+def parse_current_year(date_string, date_format='%d %b %Y %H:%M'):
+    """
+    Parse date string to datetime object.
+    Example:
+    date_string: '1 марта в 06:59'
+    :type date_string: str - str with post timestamp
+    :type date_format: str - str with date format for parsing
+    :return: datetime object
+    """
+    converted_string = date_string.replace(u'в',
+                                str(datetime.today().strftime('%Y')))
+    converted_string = format_month(converted_string)
+    return datetime.strptime(converted_string, date_format)
+
+
+def parse_full(date_string, date_format='%d %b %Y %H:%M'):
+    """
+    Parse date string to datetime object.
+    Example:
+    date_string: '17 ноября 2015 в 12:01'
+    :type date_string: str - str with post timestamp
+    :type date_format: str - str with date format for parsing
+    :return: datetime object
+    """
+    converted_string = date_string.replace(u'в ', '')
+    converted_string = format_month(converted_string)
+    return datetime.strptime(converted_string, date_format)

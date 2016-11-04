@@ -23,7 +23,7 @@ class MainLocators:
 
         "SEARCH_RESULTS": (By.CLASS_NAME, 'search_results'),
 
-        "POSTS": (By.CLASS_NAME, 'post'),
+        "POST": (By.CLASS_NAME, 'post'),
 
         "SORT_BY_TIME": (By.CSS_SELECTOR, 'ul.sort_menu *:nth-child(3)'),
 
@@ -31,7 +31,9 @@ class MainLocators:
 
         "SORT_BY_RATING": (By.CSS_SELECTOR, 'ul.sort_menu *:nth-child(4)"]'),
 
-        "POST_TIMESTAMP": (By.CLASS_NAME, 'post__time_published'),
+        "POST_TIMESTAMP": (By.CSS_SELECTOR, '.post__time_published'),
+
+        "POST TITLE": (By.CSS_SELECTOR, '.post__title_link'),
 
         "EMPTY_STATE": (By.CLASS_NAME, 'search-results-title'),
 

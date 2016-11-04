@@ -1,4 +1,4 @@
-<testsuite errors="0" failures="0" name="search.Search" skipped="2" tests="3" time="27.641194"><testcase classname="search.Search" name="I would like to search for a topic" status="skipped" time="0"><skipped /><system-out>
+<testsuite errors="0" failures="0" name="search.Search" skipped="2" tests="3" time="29.553185"><testcase classname="search.Search" name="I would like to search for a topic" status="skipped" time="0"><skipped /><system-out>
 <![CDATA[
 @scenario.begin
   Scenario: I would like to search for a topic
@@ -9,15 +9,17 @@
 @scenario.end
 --------------------------------------------------------------------------------
 ]]>
-</system-out></testcase><testcase classname="search.Search" name="I would like to sort search results by timing" status="passed" time="27.641194"><system-out>
+</system-out></testcase><testcase classname="search.Search" name="I would like to sort search results by timing" status="passed" time="29.553185"><system-out>
 <![CDATA[
 @scenario.begin
 
   @wip
   Scenario: I would like to sort search results by timing
-    Given I see search results for "behave python" ... passed in 15.543s
-    When I apply sorting by "time" ... passed in 9.671s
-    Then I see sorted search results ... passed in 2.427s
+    Given I am on the home page ... passed in 15.595s
+    When I search for "behave python" ... passed in 0.238s
+    And I apply sorting by "time" ... passed in 11.874s
+    Then I see first result in the list ... passed in 0.030s
+    And I see sorted search results ... passed in 1.816s
 
 @scenario.end
 --------------------------------------------------------------------------------

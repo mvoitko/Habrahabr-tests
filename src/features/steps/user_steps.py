@@ -34,7 +34,7 @@ def step_impl(context):
     username = page.get_text('username')
     assert_that(username, contains_string(context.usernames[context.email]))
 
-@given(u'I am on the home page')
+@step(u'I am on the home page')
 def step_impl(context):
     page = MainPage(context.driver)
     page.open()
@@ -52,13 +52,13 @@ def step_impl(context):
     page = MainPage(context.driver)
     searched_item = page.get_text('searched item')
     assert_that(len(page.get_search_results()), is_(greater_than_or_equal_to(1)))
-    assert_that(searched_item.lower(), contains_string(context.querry.lower()))
+    assert_that(context.querry.lower(), contains_string(searched_item.lower()))
 
 @given(u'I see search results for "{querry}"')
 def step_impl(context, querry):
+    context.querry = querry
     page = MainPage(context.driver)
     page.open()
-    context.querry = querry
     page.search(context.querry)
 
 
@@ -77,7 +77,6 @@ def step_impl(context):
 @then(u'I see "{empty_state_text}" empty state message')
 def step_impl(context, empty_state_text):
     page = MainPage(context.driver)
-    # context.driver.implicitly_wait(3)
     message_text = page.get_text('empty state')
     print(message_text)
     assert_that(message_text, equal_to(empty_state_text))

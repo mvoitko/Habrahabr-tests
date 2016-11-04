@@ -25,7 +25,7 @@ class BasePage:
         :type driver: selenium.webdriver.*
         """
         self.driver = driver
-        self.timeout = 15
+        self.timeout = 20
         self.logger = logging.getLogger(self.__class__.__name__)
 
     def open(cls):
@@ -36,7 +36,7 @@ class BasePage:
         """
         cls.driver.get(cls.url)
 
-    def _find_elem_by_key(cls, key):
+    def _find_locator_by_key(cls, key):
         """
         Find respective locator for the element in locators dictionary.
         :param key: str - web element key
@@ -57,10 +57,9 @@ class BasePage:
         :param key: str - web element key
         :return: element: selenium.webdriver.remote.webelement.WebElement
         """
-        locator = cls._find_elem_by_key(key)
-        WebDriverWait(cls.driver, cls.timeout).until(
+        locator = cls._find_locator_by_key(key)
+        return WebDriverWait(cls.driver, cls.timeout).until(
             EC.presence_of_element_located(locator))
-        return cls.driver.find_element(*locator)
 
     def find_elems(cls, key):
         """
@@ -68,11 +67,9 @@ class BasePage:
         :param key: str - web element key
         :return: elements: list of selenium.webdriver.remote.webelement.WebElement
         """
-        locator = cls._find_elem_by_key(key)
-        WebDriverWait(cls.driver, cls.timeout).until(
-            EC.presence_of_element_located(locator))
-        return cls.driver.find_elements(*locator)
-
+        locator = cls._find_locator_by_key(key)
+        return WebDriverWait(cls.driver, cls.timeout).until(
+            EC.presence_of_all_elements_located(locator))
 
     def click_on(self, key):
         """

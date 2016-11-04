@@ -3,21 +3,22 @@ Created on Oct 28, 2016
 
 @author: mvoitko
 """
+
 import re
 import time
 import locale
 from datetime import datetime
 from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
 from selenium.common.exceptions import *
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 
 from src import config
 from src.utils import helper
 from src.pages.basePage import BasePage
 from src.locators.mainLocators import MainLocators
 
-
-# locale.setlocale(locale.LC_ALL, 'ru_RU.UTF-8')
 
 class MainPage(BasePage):
     """
@@ -45,13 +46,7 @@ class MainPage(BasePage):
         :param querry: str - text to search
         :return: results: list of selenium.webdriver.remote.webelement.WebElement
         """
-        results = self.find_elems('posts')
-        results_texts = []
-        if len(results) >= 1:
-            for element in results:
-                results_texts.append(element.text)
-        print(results_texts)
-        return results_texts
+        return self.find_elems('post')
 
     def sort_by(self, sorting_param):
         """
@@ -59,8 +54,10 @@ class MainPage(BasePage):
         :param sorting_param: str - sort by parameter
         :return: MainPage: selenium.webdriver.*
         """
+        # old_post = self.driver.find_element(*MainLocators.locators_dictionary['POST TITLE'])
         sorting_param = "sort by " + sorting_param
         self.click_on(sorting_param)
+        # WebDriverWait(self.driver, self.timeout).until(EC.staleness_of(old_post))
         return MainPage(self.driver)
 
     def get_posts_timestamps(self):
@@ -68,7 +65,7 @@ class MainPage(BasePage):
         Get posts timestamps.
         :return: timestamps: list of datetime objects of posts.
         """
-        time.sleep(2)
+        time.sleep(1)
         timestamps = []
         timestamp_elements = self.find_elems('post timestamp')
         for timestamp in timestamp_elements:
@@ -82,6 +79,6 @@ class MainPage(BasePage):
                 date_object = helper.parse_full(timestamp.text)
             else:
                 raise NoSuchElementException(
-                    "Cannot find {0} locator on the {1} page".format(key, str(cls)))
+                    "Cannot find POST TIMESTAMP locator on the {1} page".format(str(cls)))
             timestamps.append(date_object)
         return timestamps
