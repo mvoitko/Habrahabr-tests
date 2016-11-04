@@ -3,6 +3,7 @@ Created on Oct 28, 2016
 
 @author: mvoitko
 """
+import time
 from behave import *
 from hamcrest import *
 from selenium import webdriver
@@ -50,7 +51,6 @@ def step_impl(context, querry):
 def step_impl(context):
     page = MainPage(context.driver)
     searched_item = page.get_text('searched item')
-    print(page.get_search_results())
     assert_that(len(page.get_search_results()), is_(greater_than_or_equal_to(1)))
     assert_that(searched_item.lower(), contains_string(context.querry.lower()))
 
@@ -71,14 +71,13 @@ def step_impl(context, sorting_param):
 @then(u'I see sorted search results')
 def step_impl(context):
     page = MainPage(context.driver)
-    page.sort_by('time')
-    # context.driver.implicitly_wait(5)
     posts_timestamps = page.get_posts_timestamps()
     assert_that(posts_timestamps, equal_to(sorted(posts_timestamps, reverse=True)))
 
 @then(u'I see "{empty_state_text}" empty state message')
 def step_impl(context, empty_state_text):
     page = MainPage(context.driver)
-    context.driver.implicitly_wait(3)
+    # context.driver.implicitly_wait(3)
     message_text = page.get_text('empty state')
+    print(message_text)
     assert_that(message_text, equal_to(empty_state_text))

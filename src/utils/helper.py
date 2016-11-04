@@ -135,13 +135,13 @@ def parse_full(date_string, date_format='%d %b %Y %H:%M'):
     return datetime.strptime(converted_string, date_format)
 
 
-def format_month(date_string, month_regexp='([а-я]{3,8})'):
+def format_month(date_string, month_pattern='([а-я]{3,8})'):
     """
     Format month in string for parsing.
     :type date_string: str - str with post timestamp
     :return: converted_string: str - with formatted month
     """
-    month_re = re.search(month_regexp, date_string, re.IGNORECASE)
+    month_re = re.search(month_pattern, date_string, re.IGNORECASE)
     month = month_re.group(0)
     converted_string = date_string.replace(month, month[:3])
     if u'мая' in converted_string:

@@ -1,0 +1,36 @@
+<testsuite errors="0" failures="0" name="search.Search" skipped="2" tests="3" time="27.641194"><testcase classname="search.Search" name="I would like to search for a topic" status="skipped" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario: I would like to search for a topic
+    Given I am on the home page ... skipped in 0.000s
+    When I search for "behave" ... skipped in 0.000s
+    Then I see first result in the list ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="search.Search" name="I would like to sort search results by timing" status="passed" time="27.641194"><system-out>
+<![CDATA[
+@scenario.begin
+
+  @wip
+  Scenario: I would like to sort search results by timing
+    Given I see search results for "behave python" ... passed in 15.543s
+    When I apply sorting by "time" ... passed in 9.671s
+    Then I see sorted search results ... passed in 2.427s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="search.Search" name="I would like to see respective message when no results found" status="skipped" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario: I would like to see respective message when no results found
+    Given I am on the home page ... skipped in 0.000s
+    When I search for "blahblahblahblahblahblah" ... skipped in 0.000s
+    Then I see "Сожалеем, поиск в топиках не дал результатов" empty state message ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase></testsuite>

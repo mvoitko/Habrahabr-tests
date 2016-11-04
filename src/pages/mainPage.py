@@ -3,17 +3,18 @@ Created on Oct 28, 2016
 
 @author: mvoitko
 """
-import locale
 import re
+import time
+import locale
 from datetime import datetime
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.common.exceptions import *
 
 from src import config
+from src.utils import helper
 from src.pages.basePage import BasePage
 from src.locators.mainLocators import MainLocators
-from src.utils import helper
 
 
 # locale.setlocale(locale.LC_ALL, 'ru_RU.UTF-8')
@@ -60,14 +61,14 @@ class MainPage(BasePage):
         """
         sorting_param = "sort by " + sorting_param
         self.click_on(sorting_param)
-        # return MainPage(self.driver)
+        return MainPage(self.driver)
 
     def get_posts_timestamps(self):
         """
         Get posts timestamps.
         :return: timestamps: list of datetime objects of posts.
         """
-
+        time.sleep(2)
         timestamps = []
         timestamp_elements = self.find_elems('post timestamp')
         for timestamp in timestamp_elements:
