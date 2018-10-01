@@ -25,3 +25,6 @@ behave features/ # run all feature files in the given folder
 behave features/search.feature # run the search.feature file only
 behave -t=smoke # run only features/scenarios with @smoke tag
 ```
+
+## Testimonials
+Special gratitude to Pavlo Bezrukov, Bill Gates, Elon Musk
